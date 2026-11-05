@@ -1,0 +1,48 @@
+name: Bug report
+description: Something in Aeris isn't working as expected
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to report this. The more detail, the faster it gets fixed.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Search for "Kullu"
+        2. Open Compare
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: city
+    attributes:
+      label: City you were viewing
+      placeholder: e.g. Kullu, Himachal Pradesh
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options: [Chrome, Safari, Edge, Firefox, Other]
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      options: [Mac, Windows, iPhone, Android, iPad, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or console errors
+      description: Drag in a screenshot, or paste anything red from the browser console.

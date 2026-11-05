@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security problem
+    url: https://github.com/harshxt01/aeris/security/advisories/new
+    about: Please report security problems privately, not as a public issue.
+  - name: Open the live app
+    url: https://harshxt01.github.io/aeris/
+    about: Check whether the problem happens on the live site too.

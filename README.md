@@ -18,6 +18,7 @@ A weather web app whose background is a live sky, drawn by your graphics card fr
 <img src="https://img.shields.io/badge/dependencies-0-30D158?style=flat-square" alt="Zero dependencies">
 <img src="https://img.shields.io/badge/API_key-not_needed-30D158?style=flat-square" alt="No API key needed">
 <img src="https://img.shields.io/badge/license-MIT-8E8E93?style=flat-square" alt="MIT license">
+<a href="https://github.com/harshxt01/aeris/actions/workflows/check.yml"><img src="https://github.com/harshxt01/aeris/actions/workflows/check.yml/badge.svg" alt="Check status"></a>
 
 </div>
 
@@ -163,6 +164,7 @@ aeris/
 ├── index.html            the whole app: layout, styles, sky shader and logic
 ├── sw.js                 service worker: offline mode and caching
 ├── manifest.webmanifest  app name, colours and icons for installing
+├── .github/              issue and pull request templates, automatic checks
 ├── icons/                app icons (192, 512, maskable, Apple touch)
 └── docs/                 screenshots and the demo GIF for this README
 ```
@@ -193,6 +195,10 @@ Open <http://localhost:8000>. You can also just double-click `index.html`. Every
 - [ ] Rain radar map
 - [ ] Weather alerts banner for storms and poor air quality
 - [ ] Rebuild with Next.js and TypeScript
+
+## Contributing
+
+Bug reports and ideas are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) to get started, and please follow the [Code of Conduct](CODE_OF_CONDUCT.md). Found a security problem? See [SECURITY.md](SECURITY.md).
 
 ## License
 

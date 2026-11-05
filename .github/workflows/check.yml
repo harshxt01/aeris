@@ -1,0 +1,54 @@
+name: Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Required files exist
+        run: |
+          for f in index.html sw.js manifest.webmanifest icons/icon-192.png icons/icon-512.png icons/icon-maskable-512.png icons/apple-touch-icon.png; do
+            test -f "$f" || { echo "::error::Missing $f"; exit 1; }
+          done
+          echo "All required files are present"
+
+      - name: JavaScript has no syntax errors
+        run: |
+          node -e "
+            const s = require('fs').readFileSync('index.html', 'utf8');
+            const a = s.lastIndexOf('<script>'), b = s.lastIndexOf('</script>');
+            new Function(s.slice(a + 8, b));
+            console.log('index.html script is valid');
+          "
+          node --check sw.js && echo "sw.js is valid"
+
+      - name: App manifest is valid
+        run: |
+          node -e "
+            const m = JSON.parse(require('fs').readFileSync('manifest.webmanifest', 'utf8'));
+            for (const k of ['name', 'short_name', 'start_url', 'display', 'icons']) if (!m[k]) throw new Error('manifest is missing ' + k);
+            console.log('manifest is valid');
+          "
+
+      - name: Service worker version was bumped
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --depth=1 origin "${{ github.base_ref }}"
+          if ! git diff --quiet FETCH_HEAD -- index.html && git diff --quiet FETCH_HEAD -- sw.js; then
+            echo "::error::index.html changed but sw.js did not. Bump VERSION in sw.js so visitors get the update."
+            exit 1
+          fi
+          echo "OK"
