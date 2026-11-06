@@ -9,7 +9,7 @@
      answer and mark it with an "x-aeris-saved" header so the page can say how old it is.
 
    When you change index.html, bump VERSION so visitors get the new copy. */
-const VERSION = 'aeris-v5';
+const VERSION = 'aeris-v6';
 const DATA = 'aeris-data';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
 

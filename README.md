@@ -61,12 +61,35 @@ It's my first portfolio project as a B.Tech CSE (AI/ML) student. I built it in p
 | | |
 |---|---|
 | **Comfort score** | One number from 0 to 100 for how pleasant it feels, with an outfit tip |
-| **Best time outside** | The best 2-hour window in the next 24 hours, with a bar for every hour |
+| **Activity planner** | The best time to walk, run, cycle, play cricket, go on a photo walk, picnic, dry laundry, stargaze or fly a kite, across the whole week |
 | **Air quality and UV** | US AQI, PM2.5 and UV, colour-coded with plain-English advice |
 | **Sun and golden hour** | A sun arc with sunrise, sunset, golden hours and daylight left |
 | **Wind and pressure** | Animated gauges with gusts, direction and pressure trend |
 | **Feels like, humidity, visibility, rain** | Each one explained in a sentence, not just a number |
 | **Hourly and 7-day** | A temperature curve coloured by temperature, and Apple-style range bars |
+
+### Tap any tile for the details
+Every tile opens a detail view with hourly charts you can hover or touch to read exact values. You get day-by-day forecasts, a 3-day air quality chart with pollutant breakdowns, today's UV curve, wind and gusts, the pressure trend, humidity, visibility, rain, and what's pulling your comfort score down.
+
+<p align="center"><img src="docs/detail-forecast.jpg" width="49%" alt="Forecast detail with day tabs, a temperature curve with feels-like line, and chance of rain by hour"> <img src="docs/detail-aqi.jpg" width="49%" alt="Air quality detail with planner, a 3-day AQI chart coloured by category, and pollutant breakdown"></p>
+
+### Plan around the weather
+- **Sunset score.** Every sunrise and sunset gets a score from 0 to 100, based on the cloud layers at that hour. High, thin clouds catch the colour, thick low cloud hides the horizon, and rain washes it out.
+- **Activity planner.** Pick an activity and see the best windows across 7 days, plus an hour-by-hour heatmap. Each activity has its own readable rules, from wind for kites to moonlight for stargazing.
+- **Air quality planner.** The best hours to open the windows, the best time to exercise outside, and when to keep windows closed, from the hourly AQI forecast.
+- **Trip packing list.** Choose a destination and dates up to 16 days ahead, and get a packing list built from that forecast, with the reason for each item. Tick items off and copy the list.
+
+<p align="center"><img src="docs/detail-sunset.jpg" width="49%" alt="Sunset score detail: tonight's score, cloud layers, and scores for every sunrise and sunset this week"> <img src="docs/detail-planner.jpg" width="49%" alt="Activity planner: best windows for a walk and a 7-day hour-by-hour heatmap"></p>
+
+### Moon and stars
+Aeris calculates tonight's real moon phase, moonrise and moonset for your city, and the next full and new moon. The live sky draws the moon in its real phase, and stars dim under a bright moon. A stargazing score for each hour of the night combines cloud cover, moonlight and humidity.
+
+<p align="center"><img src="docs/detail-moon.jpg" width="720" alt="Moon detail: waning crescent, moonrise and moonset times, stargazing score by hour and the next 30 days of phases"></p>
+
+### Window mode
+One button turns Aeris into a living window: the full-screen sky, a large clock in the city's local time, and the current weather. The sky follows the real time, so the sun sets and the stars come out while it runs, and the forecast refreshes every 30 minutes. Leave it on a second monitor, a TV or a tablet.
+
+<p align="center"><img src="docs/window-mode.jpg" width="900" alt="Window mode: a large 6:06 PM clock over a dusk sky with rain running down the glass"></p>
 
 ### Compare two cities
 Two live skies side by side, with local time, comfort, rain, wind, humidity, UV, air quality and sun times. A plain-English summary like *"London is 14° cooler than New Delhi, and it's raining there. Local time there is 5h 30m behind."* A 24-hour temperature chart shows both cities.
@@ -122,7 +145,7 @@ function comfort(feels, hum, wind, pop, uv) {
 }
 ```
 
-**Best time outside** scores each daytime hour (6 AM to 9 PM) in the next 24 hours with this formula and picks the best two hours in a row.
+The **activity planner** uses this formula for walks. Other activities have their own rules, such as wind speed for kites or moonlight for stargazing. It scores every hour of the week and finds the best stretches.
 
 **Golden hour** is estimated as the hour after sunrise and the hour before sunset.
 
@@ -155,6 +178,8 @@ The screen is split into an invisible grid. Each cell gets random numbers that d
 | Wipe the glass | Move your cursor over the sky, or drag a finger |
 | Compare cities | The two-panel button in the top bar |
 | Sky sounds | The speaker button |
+| See the details | Tap any tile, or its arrow button |
+| Window mode | The frame button in the top bar. Press Esc or Exit to leave |
 | Install | The download button in the top bar (Chrome, Edge) or Share, then Add to Home Screen (iPhone) |
 
 ## Project structure
@@ -194,6 +219,7 @@ Open <http://localhost:8000>. You can also just double-click `index.html`. Every
 - [ ] Saved places: swipe between your favourite cities
 - [ ] Rain radar map
 - [ ] Weather alerts banner for storms and poor air quality
+- [ ] "Is today normal?" comparison with the 30-year average
 - [ ] Rebuild with Next.js and TypeScript
 
 ## Contributing
@@ -208,6 +234,7 @@ Released under the [MIT License](LICENSE). You're free to use, change and share 
 
 - Weather and air quality data by [Open-Meteo.com](https://open-meteo.com/), licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Reverse geocoding for "use my location" by [BigDataCloud](https://www.bigdatacloud.com/)
+- Moonrise and moonset maths adapted from [SunCalc](https://github.com/mourner/suncalc) by Vladimir Agafonkin (BSD-2-Clause)
 - Colour palette inspired by Apple Weather
 
 <sub>Screenshots in this README use sample forecast data so every kind of weather can be shown.</sub>
