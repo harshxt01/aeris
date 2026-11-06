@@ -20,7 +20,7 @@ jobs:
 
       - name: Required files exist
         run: |
-          for f in index.html sw.js manifest.webmanifest icons/icon-192.png icons/icon-512.png icons/icon-maskable-512.png icons/apple-touch-icon.png; do
+          for f in index.html widget.html sw.js manifest.webmanifest icons/icon-192.png icons/icon-512.png icons/icon-maskable-512.png icons/apple-touch-icon.png; do
             test -f "$f" || { echo "::error::Missing $f"; exit 1; }
           done
           echo "All required files are present"
@@ -32,6 +32,11 @@ jobs:
             const a = s.lastIndexOf('<script>'), b = s.lastIndexOf('</script>');
             new Function(s.slice(a + 8, b));
             console.log('index.html script is valid');
+          "
+          node -e "
+            const s = require('fs').readFileSync('widget.html', 'utf8');
+            new Function(s.slice(s.lastIndexOf('<script>') + 8, s.lastIndexOf('</script>')));
+            console.log('widget.html script is valid');
           "
           node --check sw.js && echo "sw.js is valid"
 

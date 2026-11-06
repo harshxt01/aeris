@@ -91,6 +91,44 @@ One button turns Aeris into a living window: the full-screen sky, a large clock 
 
 <p align="center"><img src="docs/window-mode.jpg" width="900" alt="Window mode: a large 6:06 PM clock over a dusk sky with rain running down the glass"></p>
 
+### Explain the sky
+Tap **Explain the sky** and glowing dots appear on what you can actually see: the sun, the moon, the clouds, the rain, the stars, even the mist on the glass. Tap one for a short explanation using live numbers, like why the sky is blue (Rayleigh scattering) with the sun's real altitude, or which cloud layers are overhead right now.
+
+<p align="center"><img src="docs/explain.jpg" width="900" alt="Explain the sky: glowing dots over the sun and clouds, with a card explaining the sun is 44 degrees above the horizon"></p>
+
+### Alerts and rain countdown
+- **Weather alerts.** A banner warns about extreme heat, freezing nights, thunderstorms, heavy rain, strong gusts, extreme UV, dense fog, very unhealthy air and high river flow. These are Aeris's own rules on the forecast, not official warnings.
+- **Rain countdown.** A ring under the temperature counts down to the next rain ("Rain in about 25 min") or to when it eases, from 15-minute forecast steps.
+
+<p align="center"><img src="docs/hero-actions.jpg" width="900" alt="The hero with a rain countdown ring, Postcard and Explain the sky buttons, the time ribbon and a river flood risk alert"></p>
+
+### Insights no other weather app shows
+- **Forecast confidence.** Weather services run their forecast many times with slightly different starting conditions. Aeris shows where 8 in 10 runs land, how many runs bring rain, and a High, Medium or Low confidence for each day.
+- **Model comparison.** The European (ECMWF), American (GFS) and German (ICON) models side by side, with the days they disagree on highlighted.
+- **Flood watch.** River flow for the nearest river from the GloFAS global flood model, compared with its usual level for the last 3 months.
+- **Solar power estimate.** How much a rooftop system (1 to 10 kW) would generate today, tomorrow and this week, hour by hour.
+- **Beach mode.** For coastal cities: wave height, sea temperature and the best beach hours. The tile only appears near the sea.
+- **Plant care.** Whether to water today, from forecast rain, soil moisture and evaporation, with frost, heat and wind tips.
+
+<p align="center"><img src="docs/insights.jpg" width="900" alt="Insights section: forecast confidence by day, solar power estimate, flood watch and plant care tiles"></p>
+<p align="center"><img src="docs/detail-confidence.jpg" width="49%" alt="Forecast confidence detail with a shaded temperature range across 20 forecast runs"> <img src="docs/detail-models.jpg" width="49%" alt="Weather models detail comparing ECMWF, GFS and ICON temperatures and daily highs"></p>
+
+### Make and share
+- **Sky postcards.** Turn the live sky into an image in Story, Square or Wide format, with your city and the weather, then save or share it.
+- **Website widget.** A live weather card for any website: pick a style and look, copy one line of code, and paste it into your page.
+- **Sky collection.** 18 badges that unlock when the real sky delivers: golden hours, full moons, thunderstorms, snow days, clean-air days and more.
+
+<p align="center"><img src="docs/postcard.jpg" width="260" alt="A story-sized sky postcard of New Delhi at 24 degrees, mostly clear"> &nbsp; <img src="docs/widgets.jpg" width="560" alt="The website widget as a sky card, a light card, and two strips"></p>
+
+Add the widget to your own site:
+
+```html
+<iframe src="https://harshxt01.github.io/aeris/widget.html?lat=28.6139&lon=77.2090&name=New%20Delhi&style=card&theme=sky"
+        width="340" height="200" style="border:0;border-radius:22px" loading="lazy" title="Weather in New Delhi"></iframe>
+```
+
+Options: `style=card` or `strip`, `theme=sky`, `dark` or `light`, and `unit=C` or `F`.
+
 ### Compare two cities
 Two live skies side by side, with local time, comfort, rain, wind, humidity, UV, air quality and sun times. A plain-English summary like *"London is 14° cooler than New Delhi, and it's raining there. Local time there is 5h 30m behind."* A 24-hour temperature chart shows both cities.
 
@@ -179,6 +217,8 @@ The screen is split into an invisible grid. Each cell gets random numbers that d
 | Compare cities | The two-panel button in the top bar |
 | Sky sounds | The speaker button |
 | See the details | Tap any tile, or its arrow button |
+| Learn about the sky | Explain the sky, under the temperature |
+| Make a postcard | Postcard, under the temperature |
 | Window mode | The frame button in the top bar. Press Esc or Exit to leave |
 | Install | The download button in the top bar (Chrome, Edge) or Share, then Add to Home Screen (iPhone) |
 
@@ -187,6 +227,7 @@ The screen is split into an invisible grid. Each cell gets random numbers that d
 ```
 aeris/
 ├── index.html            the whole app: layout, styles, sky shader and logic
+├── widget.html           the embeddable weather widget
 ├── sw.js                 service worker: offline mode and caching
 ├── manifest.webmanifest  app name, colours and icons for installing
 ├── .github/              issue and pull request templates, automatic checks
@@ -215,10 +256,9 @@ Open <http://localhost:8000>. You can also just double-click `index.html`. Every
 
 ## Ideas for next
 
-- [ ] Weather postcards: save the current sky as a shareable image
 - [ ] Saved places: swipe between your favourite cities
 - [ ] Rain radar map
-- [ ] Weather alerts banner for storms and poor air quality
+- [ ] Hindi and other Indian languages
 - [ ] "Is today normal?" comparison with the 30-year average
 - [ ] Rebuild with Next.js and TypeScript
 
@@ -234,6 +274,7 @@ Released under the [MIT License](LICENSE). You're free to use, change and share 
 
 - Weather and air quality data by [Open-Meteo.com](https://open-meteo.com/), licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Reverse geocoding for "use my location" by [BigDataCloud](https://www.bigdatacloud.com/)
+- River flow forecasts from the [GloFAS](https://www.globalfloods.eu/) global flood model (Copernicus), marine forecasts and ensemble model runs, all via Open-Meteo
 - Moonrise and moonset maths adapted from [SunCalc](https://github.com/mourner/suncalc) by Vladimir Agafonkin (BSD-2-Clause)
 - Colour palette inspired by Apple Weather
 

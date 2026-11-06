@@ -487,6 +487,92 @@ body.wm .wrap { opacity: 0; pointer-events: none; transition: opacity .8s var(--
   .moon-hero .moonsvg { width: 110px; height: 110px; }
 }
 
+/* ---------- grouped sections ---------- */
+.bento-head { grid-column: 1 / -1; margin: 36px 6px 0; }
+.bento-head:first-child { margin-top: 2px; }
+.bento-head h2 { margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -.015em; }
+.bento-head p { margin: 4px 0 0; color: var(--t2); font-size: 15px; }
+
+/* ---------- hero actions, rain countdown, alerts ---------- */
+.hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.hpill { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px 0 13px; border: 0; border-radius: 999px; font-size: 14px; font-weight: 600; cursor: pointer; transition: transform .45s var(--spring); }
+.hpill > * { position: relative; z-index: 3; }
+.hpill:hover { transform: translateY(-2px); }
+.rain-chip { display: inline-flex; align-items: center; gap: 10px; margin: 16px auto 0; padding: 6px 18px 6px 6px; border: 0; border-radius: 999px; font-size: 15px; font-weight: 600; cursor: pointer; animation: pop .6s var(--spring); }
+.rain-chip > * { position: relative; z-index: 3; }
+.rain-chip svg { width: 34px; height: 34px; }
+.alert-bar { display: flex; align-items: center; gap: 14px; max-width: 820px; margin: 14px auto 0; padding: 12px 10px 12px 12px; border-radius: 22px; text-align: left; animation: pop .6s var(--spring); }
+.alert-bar > * { position: relative; z-index: 3; }
+.lvl-warning { --al: #FF453A; } .lvl-advisory { --al: #FFD60A; }
+.al-ic { flex: none; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 13px; color: var(--al); background: rgba(0,0,0,.25); box-shadow: inset 0 0 0 1px var(--al); }
+.al-txt { flex: 1; min-width: 0; }
+.al-txt b, .al-card b { font-size: 15px; font-weight: 700; }
+.al-txt p { margin: 2px 0 0; color: var(--t2); font-size: 13.5px; line-height: 1.4; text-shadow: none; }
+.al-more { flex: none; height: 34px; padding: 0 14px; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; background: rgba(255,255,255,.14); font-size: 13px; font-weight: 600; cursor: pointer; }
+.al-x { flex: none; width: 32px; height: 32px; display: grid; place-items: center; border: 0; border-radius: 50%; background: none; color: var(--t2); cursor: pointer; }
+.al-x:hover { background: rgba(255,255,255,.14); color: #fff; }
+.al-list { display: grid; gap: 10px; margin-top: 12px; }
+.al-card { display: flex; align-items: flex-start; gap: 14px; padding: 14px; border-radius: 18px; background: rgba(0,12,34,.22); border: 1px solid rgba(255,255,255,.12); }
+.al-card p { margin: 4px 0 0; color: var(--t2); font-size: 14px; line-height: 1.45; }
+.al-card .al-lvl { margin: 0 0 2px; color: var(--al); font-size: 12px; font-weight: 700; }
+
+/* ---------- insight tiles ---------- */
+.conf-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin: 14px 0 4px; }
+.conf-days div { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px 2px; border-radius: 14px; background: rgba(0,12,34,.18); font-size: 13px; font-weight: 600; }
+.conf-days i { width: 12px; height: 12px; border-radius: 50%; box-shadow: 0 0 10px rgba(255,255,255,.35); }
+.conf-days small { color: var(--t3); font-size: 11px; }
+.minibars { display: flex; align-items: flex-end; gap: 3px; height: 56px; margin: 14px 0 6px; }
+.minibars i { flex: 1; border-radius: 3px; background: rgba(255,214,10,.55); }
+.spark { display: block; width: 100%; height: 60px; margin-top: 10px; }
+.medal { flex: none; display: inline-grid; place-items: center; border-radius: 50%; color: #10203a; background: radial-gradient(circle at 35% 30%, #fff, var(--mc) 62%); box-shadow: 0 8px 20px -8px var(--mc), inset 0 1px 0 rgba(255,255,255,.8), inset 0 -3px 6px rgba(0,0,0,.18); }
+.medal.locked { background: rgba(255,255,255,.07); color: rgba(255,255,255,.32); box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); }
+.medal-row { display: flex; gap: 8px; margin-top: 12px; }
+.medals { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-top: 14px; }
+.md { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 16px 10px; border-radius: 18px; text-align: center; background: rgba(0,12,34,.2); border: 1px solid rgba(255,255,255,.1); }
+.md b { font-size: 14px; }
+.md small { color: var(--t3); font-size: 12px; line-height: 1.35; }
+.md.off b { color: var(--t2); }
+.pc-tile { display: flex; align-items: center; gap: 16px; }
+.pc-tile img { flex: none; width: 112px; height: 112px; border-radius: 18px; object-fit: cover; background: rgba(255,255,255,.08); box-shadow: 0 12px 30px -12px rgba(0,0,0,.5); }
+.pc-tile .cta { margin-top: 10px; }
+.pc-stage { display: grid; place-items: center; margin-top: 14px; padding: 18px; border-radius: 22px; background: rgba(0,12,34,.22); }
+.pc-stage img { display: block; max-width: 100%; max-height: 56vh; border-radius: 18px; box-shadow: 0 24px 50px -20px rgba(0,0,0,.6); }
+a.cta { display: inline-block; text-decoration: none; }
+.wg-opts { display: flex; flex-wrap: wrap; gap: 6px 24px; margin-top: 12px; }
+.wg-prev { display: grid; place-items: center; padding: 22px; overflow-x: auto; border-radius: 18px; background: repeating-conic-gradient(rgba(255,255,255,.05) 0 25%, transparent 0 50%) 0 0 / 20px 20px; }
+.wg-code { width: 100%; padding: 12px; border: 1px solid rgba(255,255,255,.18); border-radius: 14px; background: rgba(0,0,0,.28); color: #fff; font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; resize: none; }
+.legend span[style]::before { background: var(--lc); }
+.tbl.models small { margin-left: 4px; color: var(--t3); font-size: 12px; }
+.tbl tr.hot td { background: rgba(255,159,10,.12); }
+
+/* ---------- explain the sky ---------- */
+body.explaining { overflow: hidden; }
+body.explaining .wrap { opacity: .1; pointer-events: none; transition: opacity .6s var(--ease); }
+.explain { position: fixed; inset: 0; z-index: 66; }
+.ex-bar { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 14px; max-width: calc(100% - 24px); padding: 8px 8px 8px 18px; border-radius: 999px; font-size: 14px; font-weight: 600; animation: pop .5s var(--spring); }
+.ex-bar > * { position: relative; z-index: 3; }
+.ex-bar span { display: inline-flex; align-items: center; gap: 8px; }
+.ex-bar .cta { margin: 0; padding: 8px 16px; font-size: 14px; }
+.ex-dot { position: absolute; width: 44px; height: 44px; margin: -22px 0 0 -22px; border: 0; border-radius: 50%; background: none; cursor: pointer; animation: pop .6s var(--spring) backwards; animation-delay: var(--d); }
+.ex-dot i { position: absolute; inset: 14px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 4px rgba(255,255,255,.28), 0 0 24px #fff; transition: background .3s; }
+.ex-dot::before { content: ''; position: absolute; inset: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; animation: ping 2.2s var(--ease) infinite; }
+.ex-dot.on i { background: var(--accent); }
+@keyframes ping { from { transform: scale(.55); opacity: 1; } to { transform: scale(1.7); opacity: 0; } }
+.ex-card { position: absolute; padding: 18px 20px; border-radius: 22px; animation: pop .4s var(--spring); }
+.ex-card > * { position: relative; z-index: 3; }
+.ex-card b { font-size: 17px; }
+.ex-card p { margin: 8px 0 0; color: rgba(255,255,255,.9); font-size: 14.5px; line-height: 1.55; }
+@media (max-width: 680px) {
+  .bento-head { margin-top: 26px; }
+  .bento-head h2 { font-size: 22px; }
+  .conf-days { gap: 4px; }
+  .conf-days small { display: none; }
+  .pc-tile img { width: 90px; height: 90px; }
+  .alert-bar { flex-wrap: wrap; }
+  .alert-bar .al-txt { flex-basis: calc(100% - 110px); }
+  .ex-bar { top: 12px; width: calc(100% - 24px); justify-content: space-between; padding-left: 14px; font-size: 13px; }
+}
+
 /* ---------- compare ---------- */
 body.cmp-open { overflow: hidden; }
 .cmp { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 24px; background: rgba(4, 8, 22, .42); -webkit-backdrop-filter: blur(20px) saturate(140%); backdrop-filter: blur(20px) saturate(140%); animation: cmpfade .45s var(--ease); }
@@ -575,7 +661,8 @@ body.cmp-open { overflow: hidden; }
   .brand { padding-left: 6px; }
   .nav .icon-btn { width: 36px; height: 36px; border-radius: 12px; }
   .nav .seg { height: 36px; }
-  .search { order: 5; flex-basis: 100%; max-width: none; }
+  .search { order: 5; flex: 1 1 200px; max-width: none; }
+  .nav .seg { order: 6; }
   .hero { padding: 34px 0 30px; }
   .hero-icon { width: 104px; height: 104px; }
   .bento { gap: 12px; }
@@ -632,6 +719,8 @@ body.cmp-open { overflow: hidden; }
   <div class="wm-info"><p class="wm-clock" id="wmClock">--:--</p><p class="wm-date" id="wmDate"></p><p class="wm-wx"><span id="wmTemp"></span> <span id="wmCond"></span> in <span id="wmPlace"></span></p></div>
 </div>
 
+<div id="explain" class="explain" hidden></div>
+
 <div class="wrap">
   <nav class="nav glass" id="nav">
     <div class="brand"><span class="brand-orb"></span>Aeris</div>
@@ -671,6 +760,11 @@ body.cmp-open { overflow: hidden; }
       <p class="hl"><span id="hi">H: --°</span><span id="lo">L: --°</span></p>
       <div class="badge glass" id="badge" hidden><span id="badgeText"></span><button id="backNow">Back to now</button></div>
       <p class="hint" id="hint" hidden></p>
+      <button class="rain-chip glass" id="rainChip" data-go="raincast" hidden></button>
+      <div class="hero-actions">
+        <button class="hpill glass" data-go="postcard"><span data-glyph="card" data-size="17"></span><span>Postcard</span></button>
+        <button class="hpill glass" id="explainBtn"><span data-glyph="spark" data-size="17"></span><span>Explain the sky</span></button>
+      </div>
     </div>
     <div class="ribbon glass" id="ribbonBox">
       <button class="play magnet" id="play" aria-label="Play through the next 48 hours"><svg id="playIcon" viewBox="0 0 14 14" fill="currentColor"><path d="M3 1.5l9.5 5.5L3 12.5z"/></svg></button>
@@ -682,9 +776,12 @@ body.cmp-open { overflow: hidden; }
       </div>
       <span class="when-pill" id="whenPill">Now</span>
     </div>
+    <div id="alertBar" class="alert-bar glass" hidden role="status"></div>
   </header>
 
   <main class="bento" id="bento">
+    <div class="bento-head"><h2>Today and this week</h2><p>Tap any tile for hour-by-hour detail.</p></div>
+
     <!-- Hourly + time scrubber -->
     <section class="tile glass s12" style="--d:0ms">
       <h2 class="th"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Next 48 hours</h2>
@@ -740,6 +837,50 @@ body.cmp-open { overflow: hidden; }
       <div class="meter"><b id="uvMark" style="left:0%"></b></div>
       <p class="note" id="uvNote"></p>
     </section>
+
+    <!-- Feels like -->
+    <section class="tile glass half" style="--d:0ms">
+      <h2 class="th"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 14.8V5a2 2 0 1 0-4 0v9.8a4 4 0 1 0 4 0z"/></svg>Feels like</h2>
+      <p class="big" id="feelsVal">--</p>
+      <p class="note" id="feelsNote"></p>
+    </section>
+
+    <!-- Humidity -->
+    <section class="tile glass half" style="--d:60ms">
+      <h2 class="th"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg>Humidity</h2>
+      <div class="mini">
+        <svg class="humsvg" viewBox="0 0 120 120" aria-hidden="true">
+          <defs><clipPath id="clipHum"><circle cx="60" cy="60" r="54"/></clipPath></defs>
+          <circle cx="60" cy="60" r="54" fill="rgba(0,0,0,.16)"/>
+          <g clip-path="url(#clipHum)">
+            <g class="lvl" id="humLvl" style="transform:translateY(110px)">
+              <path class="w2" fill="rgba(10,132,255,.55)" d="M0 12 Q15 2 30 12 T60 12 T90 12 T120 12 T150 12 T180 12 T210 12 T240 12 V140 H0 Z"/>
+              <path class="w1" fill="rgba(100,210,255,.7)" d="M0 10 Q15 18 30 10 T60 10 T90 10 T120 10 T150 10 T180 10 T210 10 T240 10 V140 H0 Z"/>
+            </g>
+          </g>
+          <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/>
+          <ellipse cx="42" cy="30" rx="16" ry="7" fill="rgba(255,255,255,.22)" transform="rotate(-25 42 30)"/>
+        </svg>
+        <div><p class="big" id="humVal">--</p></div>
+      </div>
+      <p class="note" id="humNote"></p>
+    </section>
+
+    <!-- Visibility -->
+    <section class="tile glass half" style="--d:120ms">
+      <h2 class="th"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>Visibility</h2>
+      <p class="big" id="visVal">--</p>
+      <p class="note" id="visNote"></p>
+    </section>
+
+    <!-- Rain -->
+    <section class="tile glass half" style="--d:180ms">
+      <h2 class="th"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 0 1 18 0zM12 12v7a2 2 0 0 1-4 0"/></svg>Rain</h2>
+      <p class="big" id="rainVal">--</p>
+      <p class="note" id="rainNote"></p>
+    </section>
+
+    <div class="bento-head"><h2>Sky and stars</h2><p>The sun, the moon, the wind and tonight's sky.</p></div>
 
     <!-- Sun -->
     <section class="tile glass s6" style="--d:0ms">
@@ -815,6 +956,52 @@ body.cmp-open { overflow: hidden; }
       <div id="moonTile"><p class="note">Loading…</p></div>
     </section>
 
+    <!-- Collection -->
+    <section class="tile glass s4" data-sheet="collection" style="--d:0ms">
+      <h2 class="th"><span data-glyph="star"></span>Sky collection</h2>
+      <div id="collTile"></div>
+    </section>
+
+    <div class="bento-head"><h2>Insights</h2><p>How sure the forecast is, and what the weather means for power, rivers, plants and the sea.</p></div>
+
+    <!-- Confidence -->
+    <section class="tile glass s6" data-sheet="confidence" style="--d:0ms">
+      <h2 class="th"><span data-glyph="gauge"></span>Forecast confidence</h2>
+      <div id="confTile"><p class="note">Loading…</p></div>
+    </section>
+
+    <!-- Solar -->
+    <section class="tile glass s6" data-sheet="solar" style="--d:0ms">
+      <h2 class="th"><span data-glyph="panel"></span>Solar power</h2>
+      <div id="solarTile"><p class="note">Loading…</p></div>
+    </section>
+
+    <!-- Flood -->
+    <section class="tile glass s4" data-sheet="flood" id="floodCard" style="--d:0ms">
+      <h2 class="th"><span data-glyph="river"></span>Flood watch</h2>
+      <div id="floodTile"><p class="note">Loading…</p></div>
+    </section>
+
+    <!-- Plant -->
+    <section class="tile glass s4" data-sheet="plant" id="plantCard" style="--d:0ms">
+      <h2 class="th"><span data-glyph="plant"></span>Plant care</h2>
+      <div id="plantTile"><p class="note">Loading…</p></div>
+    </section>
+
+    <!-- Beach -->
+    <section class="tile glass s4" data-sheet="beach" id="beachTile" hidden style="--d:0ms">
+      <h2 class="th"><span data-glyph="wave"></span>Beach</h2>
+      <div id="beachBody"></div>
+    </section>
+
+    <div class="bento-head"><h2>Make and share</h2><p>Postcards, trip packing and a widget for your website.</p></div>
+
+    <!-- Postcard -->
+    <section class="tile glass s4" data-sheet="postcard" style="--d:0ms">
+      <h2 class="th"><span data-glyph="card"></span>Sky postcard</h2>
+      <div class="pc-tile"><img id="pcThumb" alt="Postcard preview of the current sky"><div><p class="lab" style="margin:0">Share this sky</p><p class="note" style="margin-top:4px">Turn the live sky into an image for your story or feed.</p><button class="cta" data-go="postcard">Make a postcard</button></div></div>
+    </section>
+
     <!-- Trip -->
     <section class="tile glass s4" data-sheet="trip" style="--d:120ms">
       <h2 class="th"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="7" width="17" height="13" rx="2.5"/><path d="M9 7V5a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 5v2M3.5 12.5h17"/></svg>Trip packing</h2>
@@ -823,46 +1010,12 @@ body.cmp-open { overflow: hidden; }
       <button class="cta" data-go="trip">Plan a trip</button>
     </section>
 
-    <!-- Feels like -->
-    <section class="tile glass half" style="--d:0ms">
-      <h2 class="th"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 14.8V5a2 2 0 1 0-4 0v9.8a4 4 0 1 0 4 0z"/></svg>Feels like</h2>
-      <p class="big" id="feelsVal">--</p>
-      <p class="note" id="feelsNote"></p>
-    </section>
-
-    <!-- Humidity -->
-    <section class="tile glass half" style="--d:60ms">
-      <h2 class="th"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg>Humidity</h2>
-      <div class="mini">
-        <svg class="humsvg" viewBox="0 0 120 120" aria-hidden="true">
-          <defs><clipPath id="clipHum"><circle cx="60" cy="60" r="54"/></clipPath></defs>
-          <circle cx="60" cy="60" r="54" fill="rgba(0,0,0,.16)"/>
-          <g clip-path="url(#clipHum)">
-            <g class="lvl" id="humLvl" style="transform:translateY(110px)">
-              <path class="w2" fill="rgba(10,132,255,.55)" d="M0 12 Q15 2 30 12 T60 12 T90 12 T120 12 T150 12 T180 12 T210 12 T240 12 V140 H0 Z"/>
-              <path class="w1" fill="rgba(100,210,255,.7)" d="M0 10 Q15 18 30 10 T60 10 T90 10 T120 10 T150 10 T180 10 T210 10 T240 10 V140 H0 Z"/>
-            </g>
-          </g>
-          <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/>
-          <ellipse cx="42" cy="30" rx="16" ry="7" fill="rgba(255,255,255,.22)" transform="rotate(-25 42 30)"/>
-        </svg>
-        <div><p class="big" id="humVal">--</p></div>
-      </div>
-      <p class="note" id="humNote"></p>
-    </section>
-
-    <!-- Visibility -->
-    <section class="tile glass half" style="--d:120ms">
-      <h2 class="th"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>Visibility</h2>
-      <p class="big" id="visVal">--</p>
-      <p class="note" id="visNote"></p>
-    </section>
-
-    <!-- Rain -->
-    <section class="tile glass half" style="--d:180ms">
-      <h2 class="th"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 0 1 18 0zM12 12v7a2 2 0 0 1-4 0"/></svg>Rain</h2>
-      <p class="big" id="rainVal">--</p>
-      <p class="note" id="rainNote"></p>
+    <!-- Widget -->
+    <section class="tile glass s4" data-sheet="widget" style="--d:0ms">
+      <h2 class="th"><span data-glyph="code"></span>Website widget</h2>
+      <p class="lab" style="margin:0">Add Aeris to your site</p>
+      <p class="note">A live weather card for any website, blog or portfolio, with one line of code.</p>
+      <button class="cta" data-go="widget">Get the widget</button>
     </section>
   </main>
 
@@ -1279,6 +1432,7 @@ void main() {
     const u = x / W * wc.width, v = y / H * wc.height;
     wx.strokeStyle = '#fff'; wx.lineCap = 'round'; wx.lineJoin = 'round'; wx.lineWidth = wc.width * 0.075;
     wx.beginPath(); wx.moveTo(lastW ? lastW[0] : u, lastW ? lastW[1] : v); wx.lineTo(u, v); wx.stroke();
+    if (lastW) Collection.wiped(Math.hypot(u - lastW[0], v - lastW[1]) * W / wc.width);
     lastW = [u, v];
   }
 
@@ -1441,6 +1595,7 @@ void main() {
       state.offset = 0;
       $('#slider').value = 0;
       renderStatic(); render(); renderExtras(); Compare.refresh(); Sheets.refresh();
+      loadExtras(place); renderInsights();
       busy(false); hideIntro();
       if (d._saved) {
         const when = new Date(d._saved).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' });
@@ -1496,6 +1651,7 @@ void main() {
     const golden = ['clear', 'partly', 'cloud'].includes(s.kind) && (Math.abs(now - rise) <= 45 || Math.abs(now - set) <= 45);
     applyTheme(golden ? 'golden' : themeKind(s.kind) + '-' + (s.day ? 'd' : 'n'));
     setSky(s, rise, set, now);
+    if (state.offset === 0) { try { Collection.check(s); } catch (e) { /* not ready yet */ } }
 
     // hero
     const pl = state.place;
@@ -1811,7 +1967,7 @@ void main() {
     $('#uC').classList.toggle('on', u === 'C'); $('#uF').classList.toggle('on', u === 'F');
     $('#uC').setAttribute('aria-pressed', u === 'C'); $('#uF').setAttribute('aria-pressed', u === 'F');
     $('#seg').classList.toggle('f', u === 'F');
-    if (state.data) { renderStatic(); render(); renderExtras(); Sheets.refresh(); }
+    if (state.data) { renderStatic(); render(); renderExtras(); renderInsights(); Sheets.refresh(); }
   }
 
   const resultsBox = $('#results');
@@ -2053,6 +2209,7 @@ void main() {
 
     function load(place) {
       B = place;
+      Collection.city(place.name);
       try { localStorage.setItem('aeris:compare', JSON.stringify(place)); } catch (e) {}
       $('.cmp-body', $('#cmpB')).innerHTML = `<p class="cmp-city">${esc(place.name)}</p><p class="note">Loading the forecast…</p>`;
       return fetchForecast(place).then(([d, a]) => { Bdata = { d, a: a && a.current ? a.current : null }; fill(); })
@@ -2150,6 +2307,13 @@ void main() {
       const h = Math.asin(Math.sin(phi) * Math.sin(dc) + Math.cos(phi) * Math.cos(dc) * Math.cos(H));
       return h + RAD * 0.017 / Math.tan(h + RAD * 10.26 / (h + RAD * 5.1));   // allow for air bending the light
     }
+    function sunAlt(ms, lat, lon) {
+      const d = toDays(ms), M = RAD * (357.5291 + 0.98560028 * d);
+      const L = M + RAD * (1.9148 * Math.sin(M) + 0.02 * Math.sin(2 * M) + 0.0003 * Math.sin(3 * M)) + RAD * 102.9372 + Math.PI;
+      const dec = Math.asin(Math.sin(E) * Math.sin(L)), ra = Math.atan2(Math.sin(L) * Math.cos(E), Math.cos(L));
+      const H = RAD * (280.16 + 360.9856235 * d) + RAD * lon - ra, phi = RAD * lat;
+      return Math.asin(Math.sin(phi) * Math.sin(dec) + Math.cos(phi) * Math.cos(dec) * Math.cos(H));
+    }
     // minutes after local midnight, or null if it doesn't rise/set that day
     function times(midnightMs, lat, lon) {
       const hc = 0.133 * RAD, at = hr => moonAlt(midnightMs + hr * 36e5, lat, lon) - hc;
@@ -2183,7 +2347,7 @@ void main() {
       if (p < .78) return 'Last quarter';
       return 'Waning crescent';
     }
-    return { moonAlt, times, phase, illum, name };
+    return { moonAlt, sunAlt, times, phase, illum, name };
   })();
 
   // A forecast time string ("2026-11-06T17:00") as a real moment, using the city's UTC offset
@@ -2245,7 +2409,7 @@ void main() {
     function hour(values, times, o = {}) {
       const id = 'ch' + (++uid), H = o.h || 190, L = 44, R = 14, T = 24, B = 28;
       const vals = values.map(v => (v == null || isNaN(v) ? null : v));
-      const all = vals.concat(o.second || []).filter(v => v != null);
+      const all = vals.concat(o.second || [], o.band ? o.band.hi.concat(o.band.lo) : [], o.lines ? [].concat(...o.lines.map(l => l.vals)) : []).filter(v => v != null);
       if (!all.length) return '<p class="note">No data for this period.</p>';
       let mn = o.min != null ? o.min : Math.min(...all), mx = o.max != null ? o.max : Math.max(...all);
       const ms = o.minSpan || 4;
@@ -2257,10 +2421,17 @@ void main() {
       let s = `<svg class="chart" viewBox="0 0 ${W} ${H}" data-chart="${id}" role="img" aria-label="${escH(o.label || 'Hourly chart')}">`;
       for (let g = 0; g <= 3; g++) { const v = mn + (mx - mn) * g / 3, y = Y(v).toFixed(1); s += `<line x1="${L}" x2="${W - R}" y1="${y}" y2="${y}" class="ch-grid"/><text x="${L - 8}" y="${+y + 4}" class="ch-y">${fA(v)}</text>`; }
       (o.bands || []).forEach(b => { const y1 = Y(Math.min(mx, b.to)), y2 = Y(Math.max(mn, b.from)); if (y2 > y1) s += `<rect x="${L}" y="${y1.toFixed(1)}" width="${W - L - R}" height="${(y2 - y1).toFixed(1)}" fill="${b.color}" opacity=".08"/>`; });
+      if (o.band) {
+        const up = [], dn = [];
+        o.band.hi.forEach((v, i) => { const l = o.band.lo[i]; if (v != null && l != null) { up.push(X(i).toFixed(1) + ',' + Y(v).toFixed(1)); dn.push(X(i).toFixed(1) + ',' + Y(l).toFixed(1)); } });
+        if (up.length > 1) s += `<path d="M${up.join(' L')} L${dn.reverse().join(' L')} Z" fill="rgba(255,255,255,.17)"/>`;
+      }
       times.forEach((t, i) => {
-        const hh = parts(t).h, x = X(i).toFixed(1);
+        const pt = parts(t), hh = pt.h, x = X(i).toFixed(1);
+        if (o.daily) { if (i % (o.every || 10) === 0) s += `<text x="${x}" y="${H - 8}" class="ch-x">${dateOf(t).getDate()} ${MONTHS[dateOf(t).getMonth()]}</text>`; return; }
+        if (pt.mi) return;
         if (hh === 0 && i > 0) s += `<line x1="${x}" x2="${x}" y1="${T - 8}" y2="${H - B}" class="ch-day"/><text x="${+x + 5}" y="${T - 10}" class="ch-dlab">${DAYS[dateOf(t).getDay()]}</text>`;
-        if (hh % (o.every || 6) === 0) s += `<text x="${x}" y="${H - 8}" class="ch-x">${fmtHour(hh)}</text>`;
+        if ((o.every || 6) < 24 && hh % (o.every || 6) === 0) s += `<text x="${x}" y="${H - 8}" class="ch-x">${fmtHour(hh)}</text>`;
       });
       const col = o.color || (() => '#fff');
       if (o.bars) {
@@ -2277,9 +2448,10 @@ void main() {
           s += `<path class="ch-line" d="${path}" fill="none" stroke="url(#${id}g)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>`;
         }
       }
+      if (o.lines && !o.bars) o.lines.forEach(l => { const q = []; l.vals.forEach((v, i) => { if (v != null) q.push([+X(i).toFixed(1), +Y(v).toFixed(1)]); }); if (q.length > 1) s += `<path d="${smooth(q)}" fill="none" stroke="${l.color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`; });
       if (o.marker != null && o.marker < n) { const x = X(o.marker).toFixed(1); s += `<line x1="${x}" x2="${x}" y1="${T}" y2="${H - B}" stroke="#fff" stroke-width="1.5" stroke-dasharray="2 4" opacity=".7"/><text x="${x}" y="${T - 10}" class="ch-dlab" text-anchor="middle">Now</text>`; }
       s += `<g class="ch-hover" opacity="0"><line y1="${T}" y2="${H - B}" stroke="#fff" stroke-width="1" opacity=".6"/><circle r="5" fill="#fff"/><rect rx="8" height="26" fill="rgba(0,10,30,.75)" stroke="rgba(255,255,255,.25)"/><text class="ch-tip" y="0"></text></g></svg>`;
-      reg[id] = { vals, second: o.second, times, X, Y, n, fmt: o.fmt || (v => Math.round(v)), fmt2: o.fmt2, H, T, B, mn };
+      reg[id] = { vals, second: o.second, lines: o.lines, short: o.short, daily: o.daily, times, X, Y, n, fmt: o.fmt || (v => Math.round(v)), fmt2: o.fmt2, H, T, B, mn };
       return s;
     }
     function days(values, labels, o = {}) {
@@ -2302,7 +2474,9 @@ void main() {
           const rect = svg.getBoundingClientRect(), x = (e.clientX - rect.left) / rect.width * W;
           let bi = 0, bd = 1e9; for (let i = 0; i < r.n; i++) { const d = Math.abs(r.X(i) - x); if (d < bd && r.vals[i] != null) { bd = d; bi = i; } }
           const v = r.vals[bi], px = r.X(bi), py = r.Y(Math.max(r.mn, v)), t = r.times[bi];
-          const label = `${DAYS[dateOf(t).getDay()]} ${fmtHour(parts(t).h)}  ${r.fmt(v)}${r.second && r.fmt2 && r.second[bi] != null ? '  ' + r.fmt2(r.second[bi]) : ''}`;
+          const pt = parts(t), when = r.daily ? `${dateOf(t).getDate()} ${MONTHS[dateOf(t).getMonth()]}` : `${DAYS[dateOf(t).getDay()]} ${pt.mi ? fmtMins(pt.h * 60 + pt.mi) : fmtHour(pt.h)}`;
+          const label = r.lines ? `${when}  ${r.short} ${r.fmt(v)}  ` + r.lines.map(l => (l.vals[bi] == null ? '' : `${l.short} ${r.fmt(l.vals[bi])}`)).join('  ')
+            : `${when}  ${r.fmt(v)}${r.second && r.fmt2 && r.second[bi] != null ? '  ' + r.fmt2(r.second[bi]) : ''}`;
           txt.textContent = label;
           const w = label.length * 7.6 + 18, bx = Math.min(W - w - 4, Math.max(4, px - w / 2));
           line.setAttribute('x1', px); line.setAttribute('x2', px); dot.setAttribute('cx', px); dot.setAttribute('cy', py);
@@ -2508,6 +2682,8 @@ void main() {
     try { Moon.tile(); } catch (e) { console.warn(e); }
     try { Planner.tile(); } catch (e) { console.warn(e); }
     try { renderAQTile(); } catch (e) { console.warn(e); }
+    try { Collection.tile(); } catch (e) { console.warn(e); }
+    try { Postcard.thumb(); } catch (e) { console.warn(e); }
   }
 
   /* ---------- 19. DETAIL SHEETS ---------- */
@@ -2929,6 +3105,7 @@ void main() {
       $('#wmClock').innerHTML = `${h % 12 || 12}:${pad2(d.getUTCMinutes())}<small>${h >= 12 ? 'PM' : 'AM'}</small>`;
       $('#wmDate').textContent = `${['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][d.getUTCDay()]}, ${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]}`;
       if (ticks++ % 30 === 0) liveSky();
+      if (ticks === 600) Collection.unlock('window');
       if (Date.now() > refreshAt && navigator.onLine !== false) { refreshAt = Date.now() + 30 * 60e3; if (ticks > 1) loadWeather(state.place).then(() => { if (on) liveSky(); }); }
     }
     function wake() { el.classList.remove('idle'); clearTimeout(idle); idle = setTimeout(() => el.classList.add('idle'), 3000); }
@@ -2957,13 +3134,733 @@ void main() {
     return { setup, enter, exit, get on() { return on; } };
   })();
 
+  /* ---------- 22. EXTRA DATA ----------
+     Loaded after the main forecast. Each source is optional: if one fails or has no data
+     for this place, only its own tile says so, and the rest of Aeris carries on. */
+  const X = { key: '', failed: {} };
+  const MODELS = { ecmwf_ifs025: ['European model', 'ECMWF', '#64D2FF'], gfs_seamless: ['American model', 'GFS', '#FF9F0A'], icon_seamless: ['German model', 'ICON', '#C9A7FF'] };
+  function loadExtras(place) {
+    const key = place.lat + ',' + place.lon;
+    if (X.key === key && !X.stale) return;
+    Object.keys(X).forEach(k => { if (k !== 'failed') delete X[k]; });
+    X.key = key; X.failed = {};
+    const q = `latitude=${place.lat}&longitude=${place.lon}&timezone=auto`;
+    const jobs = {
+      extra: `https://api.open-meteo.com/v1/forecast?${q}&forecast_days=7&hourly=shortwave_radiation,soil_moisture_3_to_9cm,et0_fao_evapotranspiration&daily=shortwave_radiation_sum,et0_fao_evapotranspiration,precipitation_sum`,
+      minutely: `https://api.open-meteo.com/v1/forecast?${q}&minutely_15=precipitation&forecast_minutely_15=32`,
+      ens: `https://ensemble-api.open-meteo.com/v1/ensemble?${q}&models=icon_seamless&hourly=temperature_2m,precipitation&forecast_days=7`,
+      models: `https://api.open-meteo.com/v1/forecast?${q}&forecast_days=7&hourly=temperature_2m,precipitation&models=${Object.keys(MODELS).join(',')}`,
+      flood: `https://flood-api.open-meteo.com/v1/flood?latitude=${place.lat}&longitude=${place.lon}&daily=river_discharge,river_discharge_max,river_discharge_min&past_days=92&forecast_days=30`,
+      marine: `https://marine-api.open-meteo.com/v1/marine?${q}&hourly=wave_height,wave_period,sea_surface_temperature&forecast_days=7`
+    };
+    Object.entries(jobs).forEach(([k, url]) => getJSON(url)
+      .then(j => { if (X.key === key) { X[k] = j; renderInsights(); } })
+      .catch(() => { if (X.key === key) { X.failed[k] = true; renderInsights(); } }));
+  }
+  const loading = k => !X[k] && !X.failed[k];
+  const minsBetween = (D, a, b) => Math.round((timeMs(D, a) - timeMs(D, b)) / 60000);
+  const durTxt = m => { m = Math.max(5, Math.round(m / 5) * 5); return m < 60 ? `${m} min` : `${Math.floor(m / 60)} h${m % 60 ? ' ' + (m % 60) + ' min' : ''}`; };
+  function members(h, name) { return Object.keys(h).filter(k => k === name || k.startsWith(name + '_member')).map(k => h[k]); }
+  function pct(arr, q) {
+    const a = arr.filter(v => v != null && !isNaN(v)).sort((x, y) => x - y);
+    if (!a.length) return null;
+    const i = (a.length - 1) * q, lo = Math.floor(i), hi = Math.ceil(i);
+    return a[lo] + (a[hi] - a[lo]) * (i - lo);
+  }
+  const nowHourStr = () => state.data.current.time.slice(0, 13) + ':00';
+  const GLYPH = {
+    sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+    sunset: '<path d="M3 17h18M6.5 17a5.5 5.5 0 0 1 11 0M12 4v4M5 9.5l1.8 1.3M19 9.5l-1.8 1.3"/>',
+    moon: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>',
+    star: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+    drop: '<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',
+    bolt: '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+    snow: '<path d="M12 2v20M4 6l16 12M20 6L4 18M9 3l3 3 3-3M9 21l3-3 3 3"/>',
+    fog: '<path d="M4 8h16M2 12h20M4 16h16M7 20h10"/>',
+    flame: '<path d="M12 22c4 0 7-3 7-7 0-5-5-7-5-12-3 2-4 5-4 7-1-1-2-2-2-4-2 2-3 5-3 9 0 4 3 7 7 7z"/>',
+    flake: '<path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/>',
+    leaf: '<path d="M5 19c8 1 14-5 14-14-9 0-15 6-14 14zM5 19l7-7"/>',
+    sunrise: '<path d="M3 18h18M6.5 18a5.5 5.5 0 0 1 11 0M12 10V3M9 6l3-3 3 3"/>',
+    owl: '<circle cx="8.5" cy="11" r="3"/><circle cx="15.5" cy="11" r="3"/><path d="M5 6l3 2M19 6l-3 2M12 15l-1 2h2z"/>',
+    globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+    frame: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M12 4v16"/>',
+    card: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 15l3-4 3 3 2-2 3 3"/>',
+    spark: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/>',
+    alert: '<path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18h.01"/>',
+    wave: '<path d="M2 15c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2M2 19c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2M9 9a4 4 0 0 1 7-3"/>',
+    river: '<path d="M4 4c4 3 0 6 4 9s0 6 4 8M12 4c4 3 0 6 4 9s0 6 4 8"/>',
+    plant: '<path d="M12 22V11M12 11C12 6 8 4 4 4c0 4 3 7 8 7zM12 14c0-4 3-6 8-6 0 4-3 6-8 6"/>',
+    panel: '<path d="M4 14l2-9h12l2 9zM4 14h16M9 5l-1 9M15 5l1 9M5 9.5h14M12 14v5M8 21h8"/>',
+    code: '<path d="M8 8l-5 4 5 4M16 8l5 4-5 4M14 4l-4 16"/>',
+    gauge: '<path d="M4.5 17a8.5 8.5 0 1 1 15 0"/><path d="M12 12l4-4"/>'
+  };
+  const glyph = (g, size = 18, extra = '') => `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"${extra}>${GLYPH[g] || ''}</svg>`;
+
+  /* ---------- 23. RAIN COUNTDOWN ----------
+     Uses 15-minute forecast steps where available. In much of the world (including India) these are
+     interpolated from the hourly model, not live radar, so the wording stays approximate. */
+  const Rain = (() => {
+    function status() {
+      const D = state.data, M = X.minutely && X.minutely.minutely_15, now = D.current.time.slice(0, 16), wet = v => (v || 0) >= 0.1;
+      if (M && M.precipitation && M.precipitation.some(v => v != null)) {
+        let s = M.time.findIndex(t => t > now) - 1; if (s < 0) s = 0;
+        const p = M.precipitation.slice(s), t = M.time.slice(s);
+        if (wet(p[0])) {
+          let k = 1; while (k < p.length - 1 && (wet(p[k]) || wet(p[k + 1]))) k++;
+          return k >= p.length - 1 ? { state: 'raining', src: '15', p, t } : { state: 'stopping', mins: minsBetween(D, t[k], now), src: '15', p, t };
+        }
+        const k = p.findIndex(wet);
+        return k > 0 ? { state: 'starting', mins: minsBetween(D, t[k], now), src: '15', p, t, mm: p[k] } : { state: 'dry', src: '15', p, t };
+      }
+      const h = D.hourly;
+      for (let k = 0; k < 6; k++) {
+        const i = state.nowIdx + k;
+        if (i < h.time.length && (h.precipitation_probability[i] || 0) >= 60) return k === 0 ? { state: 'raining', src: 'h' } : { state: 'starting', mins: minsBetween(D, h.time[i], now), src: 'h' };
+      }
+      return { state: 'dry', src: 'h' };
+    }
+    function chip() {
+      const el = $('#rainChip'); if (!state.data) return;
+      const s = status();
+      if (s.state === 'dry' || (s.state === 'starting' && s.mins > 180)) { el.hidden = true; return; }
+      const snow = kindOf(state.data.hourly.weather_code[state.nowIdx]) === 'snow', word = snow ? 'Snow' : 'Rain';
+      const txt = s.state === 'starting' ? `${word} in about ${durTxt(s.mins)}` : s.state === 'stopping' ? `${word} easing in about ${durTxt(s.mins)}` : `${word} for the next few hours`;
+      const f = s.mins != null ? clamp(1 - s.mins / 180, .04, 1) : 1;
+      el.innerHTML = `<svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="3.5"/><circle cx="18" cy="18" r="15" fill="none" stroke="#64D2FF" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="${(94.25 * f).toFixed(1)} 94.25" transform="rotate(-90 18 18)"/></svg><span>${txt}</span>`;
+      el.hidden = false;
+    }
+    Sheets.def('raincast', () => {
+      const s = status(), D = state.data;
+      let chart = '';
+      if (s.src === '15') {
+        const n = Math.min(s.p.length, 32);
+        chart = sec('Next 8 hours, in 15-minute steps', Charts.hour(s.p.slice(0, n).map(v => v || 0), s.t.slice(0, n), { bars: true, min: 0, minSpan: 1, color: v => (v >= 2.5 ? '#0A84FF' : '#64D2FF'), fmt: v => v.toFixed(1) + ' mm', fmtAxis: v => v.toFixed(1), every: 1, h: 170, label: 'Rain every 15 minutes' }));
+      } else {
+        const idx = nextIdx(12);
+        chart = sec('Next 12 hours', Charts.hour(pick(D.hourly.precipitation_probability, idx), pick(D.hourly.time, idx), { bars: true, min: 0, max: 100, color: () => '#64D2FF', fmt: v => Math.round(v) + '%', every: 2, h: 160, label: 'Chance of rain' }));
+      }
+      const head = s.state === 'starting' ? `Rain in about ${durTxt(s.mins)}` : s.state === 'stopping' ? `Rain easing in about ${durTxt(s.mins)}` : s.state === 'raining' ? 'Raining for the next few hours' : 'No rain expected soon';
+      return {
+        title: 'Rain countdown',
+        html: `<p class="lab" style="font-size:24px;margin:10px 0 0">${head}</p>${chart}
+          <p class="note small">${s.src === '15' ? 'Based on 15-minute forecast steps. In many places, including India, these are estimated from the hourly forecast model rather than live radar, so treat times as approximate.' : 'Detailed 15-minute data isn\'t available here, so this uses the hourly chance of rain.'}</p>`
+      };
+    });
+    return { status, chip };
+  })();
+
+  /* ---------- 24. WEATHER ALERTS (rules on the forecast, not official warnings) ---------- */
+  const Alerts = (() => {
+    const DKEY = 'aeris:dismissed';
+    const dismissed = () => { try { return JSON.parse(sessionStorage.getItem(DKEY)) || {}; } catch (e) { return {}; } };
+    function list() {
+      const D = state.data, h = D.hourly, idx = nextIdx(48), out = [];
+      const first = pred => idx.find(pred);
+      const at = i => `${dayWord(h.time[i])} around ${fmtHour(parts(h.time[i]).h)}`;
+      const add = (type, level, title, detail, i) => out.push({ id: type + ':' + (i != null ? h.time[i].slice(0, 10) : 'x'), type, level, title, detail, t: i != null ? h.time[i] : '' });
+      const maxBy = (arr) => idx.reduce((b, i) => (arr[i] != null && (b == null || arr[i] > arr[b]) ? i : b), null);
+      const hi = maxBy(h.apparent_temperature);
+      if (hi != null && h.apparent_temperature[hi] >= 40) add('heat', 'warning', 'Extreme heat', `Feels like up to ${fmtT(h.apparent_temperature[hi])}° ${at(hi)}. Avoid the sun from noon to 4 PM, drink water often and check on older neighbours.`, hi);
+      else if (hi != null && h.apparent_temperature[hi] >= 35) add('heat', 'advisory', 'Hot weather', `Feels like up to ${fmtT(h.apparent_temperature[hi])}° ${at(hi)}. Stay hydrated and seek shade in the afternoon.`, hi);
+      const lo = idx.reduce((b, i) => (b == null || h.apparent_temperature[i] < h.apparent_temperature[b] ? i : b), null);
+      if (lo != null && h.apparent_temperature[lo] <= -10) add('cold', 'warning', 'Severe cold', `Feels like ${fmtT(h.apparent_temperature[lo])}° ${at(lo)}. Cover exposed skin and limit time outdoors.`, lo);
+      else if (lo != null && h.apparent_temperature[lo] <= 1) add('cold', 'advisory', 'Freezing temperatures', `Feels like ${fmtT(h.apparent_temperature[lo])}° ${at(lo)}. Watch for ice and protect plants and pipes.`, lo);
+      const st = first(i => h.weather_code[i] >= 95);
+      if (st != null) add('storm', 'warning', 'Thunderstorms', `Storms are likely ${at(st)}. Stay indoors when you hear thunder and unplug sensitive electronics.`, st);
+      const hr = first(i => (h.precipitation[i] || 0) >= 7);
+      let sum24 = 0; nextIdx(24).forEach(i => { sum24 += h.precipitation[i] || 0; });
+      if (hr != null || sum24 >= 30) add('rain', 'warning', 'Heavy rain', `${hr != null ? `Downpours ${at(hr)}` : 'Lots of rain over the next day'}, about ${Math.round(sum24)} mm in 24 hours. Avoid flooded roads and underpasses.`, hr != null ? hr : state.nowIdx);
+      const g = maxBy(h.wind_gusts_10m);
+      if (g != null && h.wind_gusts_10m[g] >= 60) add('wind', 'warning', 'Strong winds', `Gusts up to ${Math.round(h.wind_gusts_10m[g])} km/h ${at(g)}. Secure loose objects on balconies and roofs.`, g);
+      else if (g != null && h.wind_gusts_10m[g] >= 45) add('wind', 'advisory', 'Gusty winds', `Gusts up to ${Math.round(h.wind_gusts_10m[g])} km/h ${at(g)}.`, g);
+      const uv = maxBy(h.uv_index);
+      if (uv != null && h.uv_index[uv] >= 11) add('uv', 'advisory', 'Extreme UV', `UV reaches ${Math.round(h.uv_index[uv])} ${at(uv)}. Unprotected skin can burn in about 10 minutes.`, uv);
+      const fg = first(i => h.visibility && h.visibility[i] != null && h.visibility[i] < 1000);
+      if (fg != null) add('fog', 'advisory', 'Dense fog', `Visibility drops below 1 km ${at(fg)}. Drive slowly with low-beam lights.`, fg);
+      const A = state.aqh;
+      if (A && A.us_aqi) {
+        const s = A.time.indexOf(nowHourStr()); let worst = null;
+        if (s >= 0) for (let k = s; k < s + 24 && k < A.time.length; k++) if (A.us_aqi[k] != null && (worst == null || A.us_aqi[k] > A.us_aqi[worst])) worst = k;
+        if (worst != null && A.us_aqi[worst] >= 200) out.push({ id: 'aqi:' + A.time[worst].slice(0, 10), type: 'aqi', level: 'warning', title: 'Very unhealthy air', detail: `Air quality reaches ${Math.round(A.us_aqi[worst])} ${dayWord(A.time[worst])} around ${fmtHour(parts(A.time[worst]).h)}. Keep windows closed, avoid outdoor exercise and wear an N95 mask outside.`, t: A.time[worst] });
+        else if (worst != null && A.us_aqi[worst] >= 150) out.push({ id: 'aqi:' + A.time[worst].slice(0, 10), type: 'aqi', level: 'advisory', title: 'Unhealthy air', detail: `Air quality reaches ${Math.round(A.us_aqi[worst])} ${dayWord(A.time[worst])} around ${fmtHour(parts(A.time[worst]).h)}. Limit long outdoor effort.`, t: A.time[worst] });
+      }
+      const fl = Flood.calc();
+      if (fl && fl.level === 'high') out.push({ id: 'flood:' + fl.peakDay, type: 'flood', level: 'warning', title: 'River flood risk', detail: `The nearest river is forecast to run unusually high, peaking around ${fl.peakLabel}. Follow your local disaster management authority.`, t: fl.peakDay });
+      else if (fl && fl.level === 'elevated') out.push({ id: 'flood:' + fl.peakDay, type: 'flood', level: 'advisory', title: 'River running high', detail: `The nearest river is forecast above its usual level, peaking around ${fl.peakLabel}.`, t: fl.peakDay });
+      return out.sort((a, b) => (a.level === b.level ? (a.t < b.t ? -1 : 1) : a.level === 'warning' ? -1 : 1));
+    }
+    const ICON = { heat: 'flame', cold: 'flake', storm: 'bolt', rain: 'drop', wind: 'wave', uv: 'sun', fog: 'fog', aqi: 'leaf', flood: 'river' };
+    function render() {
+      if (!state.data) return;
+      const bar = $('#alertBar'), dis = dismissed(), vis = list().filter(a => !dis[a.id]);
+      if (!vis.length) { bar.hidden = true; return; }
+      const a = vis[0];
+      bar.className = 'alert-bar glass lvl-' + a.level;
+      bar.innerHTML = `<span class="al-ic">${glyph(ICON[a.type] || 'alert', 20)}</span><div class="al-txt"><b>${a.title}</b><p>${a.detail}</p></div>
+        <button class="al-more" data-go="alerts">${vis.length > 1 ? `${vis.length - 1} more` : 'Details'}</button>
+        <button class="al-x" data-dismiss="${a.id}" aria-label="Dismiss this alert"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>`;
+      bar.hidden = false;
+    }
+    function setup() {
+      document.addEventListener('click', e => {
+        const b = e.target.closest('[data-dismiss]'); if (!b) return;
+        const d = dismissed(); d[b.dataset.dismiss] = 1;
+        try { sessionStorage.setItem(DKEY, JSON.stringify(d)); } catch (err) {}
+        render();
+      });
+    }
+    Sheets.def('alerts', () => {
+      const all = list();
+      return {
+        title: 'Weather alerts',
+        html: (all.length ? `<div class="al-list">${all.map(a => `<div class="al-card lvl-${a.level}"><span class="al-ic">${glyph(ICON[a.type] || 'alert', 20)}</span><div><p class="al-lvl">${a.level === 'warning' ? 'Warning' : 'Advisory'}</p><b>${a.title}</b><p>${a.detail}</p></div></div>`).join('')}</div>`
+          : '<p class="lab" style="margin:12px 0 0">No alerts for the next 48 hours.</p>') +
+          sec('What Aeris watches for', kv([['Heat', 'Feels like 35° or more'], ['Cold', 'Feels like 1° or less'], ['Storms', 'Thunderstorm forecast'], ['Heavy rain', '7 mm in an hour or 30 mm in a day'], ['Wind', 'Gusts of 45 km/h or more'], ['UV', 'Index 11 or more'], ['Fog', 'Visibility under 1 km'], ['Air quality', 'AQI 150 or more'], ['Rivers', 'Unusually high flow nearby']])) +
+          '<p class="note small">These alerts come from Aeris\'s own rules on the forecast. They are not official warnings. In India, follow IMD and your state disaster management authority.</p>'
+      };
+    });
+    return { list, render, setup };
+  })();
+
+  /* ---------- 25. FORECAST CONFIDENCE + MODEL COMPARISON ---------- */
+  const Conf = (() => {
+    function calc() {
+      const E = X.ens && X.ens.hourly; if (!E || !state.data) return null;
+      const T = members(E, 'temperature_2m'), R = members(E, 'precipitation');
+      if (T.length < 5) return null;
+      let s = E.time.indexOf(nowHourStr()); if (s < 0) s = 0;
+      const hours = { t: [], lo: [], mid: [], hi: [], rain: [] };
+      for (let i = s; i < Math.min(E.time.length, s + 168); i++) {
+        const col = T.map(m => m[i]), rc = R.map(m => m[i]).filter(v => v != null);
+        hours.t.push(E.time[i]); hours.lo.push(pct(col, .1)); hours.mid.push(pct(col, .5)); hours.hi.push(pct(col, .9));
+        hours.rain.push(rc.length ? Math.round(rc.filter(v => v >= 0.1).length / rc.length * 100) : null);
+      }
+      const days = [];
+      [...new Set(E.time.map(t => t.slice(0, 10)))].forEach(day => {
+        const ix = E.time.map((t, i) => (t.startsWith(day) ? i : -1)).filter(i => i >= 0);
+        const highs = T.map(m => { const v = ix.map(i => m[i]).filter(x => x != null); return v.length ? Math.max(...v) : null; }).filter(v => v != null);
+        const sums = R.map(m => ix.reduce((a, i) => a + (m[i] || 0), 0));
+        if (highs.length < 5 || day < state.data.current.time.slice(0, 10)) return;
+        const lo = pct(highs, .1), hi = pct(highs, .9), spread = hi - lo;
+        days.push({ day, lo, hi, spread, level: spread <= 2.5 ? 'High' : spread <= 5 ? 'Medium' : 'Low', rain: Math.round(sums.filter(v => v >= 1).length / sums.length * 100), n: T.length });
+      });
+      return { n: T.length, hours, days };
+    }
+    const lvlColor = l => (l === 'High' ? '#30D158' : l === 'Medium' ? '#FFD60A' : '#FF9F0A');
+    function headline(c) {
+      const low = c.days.find(d => d.level === 'Low');
+      return low ? `Reliable until ${dayWord(low.day + 'T12:00').toLowerCase() === 'today' ? 'later today' : DAYS[dateOf(low.day).getDay()]}, then less certain.` : 'The forecast looks reliable all week.';
+    }
+    function tile() {
+      const el = $('#confTile');
+      if (loading('ens')) { el.innerHTML = '<p class="note">Checking how sure the forecast is…</p>'; return; }
+      const c = calc();
+      if (!c) { el.innerHTML = '<p class="note">Forecast-certainty data isn\'t available for this place right now.</p>'; return; }
+      const tom = c.days[1];
+      el.innerHTML = `<p class="lab" style="margin:0">${headline(c)}</p>
+        <div class="conf-days">${c.days.slice(0, 7).map((d, i) => `<div><span>${i === 0 ? 'Today' : DAYS[dateOf(d.day).getDay()]}</span><i style="background:${lvlColor(d.level)}"></i><small>${d.level}</small></div>`).join('')}</div>
+        ${tom ? `<p class="note">Tomorrow: ${Math.round(tom.rain / 100 * c.n)} of ${c.n} forecast runs show rain, and highs land between ${fmtT(tom.lo)}° and ${fmtT(tom.hi)}°.</p>` : ''}`;
+    }
+    Sheets.def('confidence', () => {
+      const c = calc();
+      if (!c) return { title: 'Forecast confidence', html: `<p class="note">${loading('ens') ? 'Still loading the forecast runs…' : 'Forecast-certainty data isn\'t available for this place right now.'}</p>` };
+      const rows = c.days.map((d, i) => `<tr><td>${i === 0 ? 'Today' : DAYS[dateOf(d.day).getDay()]}</td><td><span class="dot" style="background:${lvlColor(d.level)}"></span>${d.level}</td><td>${fmtT(d.lo)}°–${fmtT(d.hi)}°</td><td>${d.rain}%</td></tr>`).join('');
+      return {
+        title: 'Forecast confidence',
+        html: `<p class="lab" style="margin:10px 0 0">${headline(c)}</p>
+          <p class="note">Weather services run their forecast ${c.n} times with slightly different starting conditions. When the runs agree, the forecast is reliable. When they spread apart, it's less certain. This uses the ${c.n}-run German ICON ensemble.</p>
+          ${sec('Temperature, next 7 days <em>shaded: where 8 in 10 runs land</em>', Charts.hour(c.hours.mid.map(v => (v == null ? null : tU(v))), c.hours.t, { band: { lo: c.hours.lo.map(v => (v == null ? null : tU(v))), hi: c.hours.hi.map(v => (v == null ? null : tU(v))) }, color: v => tempColor(state.unit === 'C' ? v : (v - 32) * 5 / 9), fmt: v => 'middle run ' + Math.round(v) + '°', fmtAxis: v => Math.round(v) + '°', minSpan: 6, every: 24, label: 'Temperature range across forecast runs' }))}
+          ${sec('Chance of rain from the runs', Charts.hour(c.hours.rain, c.hours.t, { bars: true, min: 0, max: 100, color: () => '#64D2FF', fmt: v => Math.round(v) + '% of runs', fmtAxis: v => Math.round(v) + '%', every: 24, h: 150, label: 'Share of runs with rain' }))}
+          ${sec('Day by day', `<table class="tbl"><thead><tr><th>Day</th><th>Confidence</th><th>Highs across runs</th><th>Runs with rain</th></tr></thead><tbody>${rows}</tbody></table>`)}
+          <div class="links"><button class="link-btn" data-go="models">Compare the big weather models</button></div>`
+      };
+    });
+
+    function models() {
+      const M = X.models && X.models.hourly; if (!M || !state.data) return null;
+      let s = M.time.indexOf(nowHourStr()); if (s < 0) s = 0;
+      const t = M.time.slice(s, s + 168), list = Object.keys(MODELS).filter(m => M['temperature_2m_' + m] && M['temperature_2m_' + m].some(v => v != null));
+      if (list.length < 2) return null;
+      const series = list.map(m => ({ m, name: MODELS[m][0], short: MODELS[m][1], color: MODELS[m][2], temp: M['temperature_2m_' + m].slice(s, s + 168), rain: (M['precipitation_' + m] || []).slice(s, s + 168) }));
+      const days = [...new Set(t.map(x => x.slice(0, 10)))].map(day => {
+        const ix = t.map((x, i) => (x.startsWith(day) ? i : -1)).filter(i => i >= 0);
+        return { day, per: series.map(sr => { const v = ix.map(i => sr.temp[i]).filter(x => x != null); return { hi: v.length ? Math.max(...v) : null, rain: ix.reduce((a, i) => a + (sr.rain[i] || 0), 0) }; }) };
+      });
+      days.forEach(d => { const h = d.per.map(p => p.hi).filter(v => v != null); d.spread = h.length ? Math.max(...h) - Math.min(...h) : 0; d.lo = Math.min(...h); d.hi = Math.max(...h); });
+      return { t, series, days };
+    }
+    Sheets.def('models', () => {
+      const r = models();
+      if (!r) return { title: 'Weather models', html: `<p class="note">${loading('models') ? 'Still loading the models…' : 'Model data isn\'t available for this place right now.'}</p>` };
+      const worst = r.days.slice(0, 7).reduce((a, b) => (b.spread > a.spread ? b : a), r.days[0]);
+      const head = worst.spread <= 2 ? 'The models agree closely all week.' : `They disagree most about ${dayWord(worst.day + 'T12:00')}: highs from ${fmtT(worst.lo)}° to ${fmtT(worst.hi)}°.`;
+      const [a, ...rest] = r.series;
+      const rows = r.days.slice(0, 7).map((d, i) => `<tr${d.spread > 3 ? ' class="hot"' : ''}><td>${i === 0 ? 'Today' : DAYS[dateOf(d.day).getDay()]}</td>${d.per.map(p => `<td>${p.hi == null ? '–' : fmtT(p.hi) + '°'} <small>${p.rain >= .1 ? p.rain.toFixed(1) + ' mm' : 'dry'}</small></td>`).join('')}</tr>`).join('');
+      return {
+        title: 'Weather models',
+        html: `<p class="lab" style="margin:10px 0 0">${head}</p>
+          <p class="note">Different weather centres run their own computer models of the atmosphere. Aeris normally blends them; here you can see each one. Where they agree, trust the forecast more.</p>
+          <div class="legend" style="margin-top:12px">${r.series.map(sr => `<span style="--lc:${sr.color}">${sr.name} (${sr.short})</span>`).join('')}</div>
+          ${sec('Temperature, next 7 days', Charts.hour(a.temp.map(v => (v == null ? null : tU(v))), r.t, { color: () => a.color, lines: rest.map(sr => ({ vals: sr.temp.map(v => (v == null ? null : tU(v))), color: sr.color, short: sr.short })), short: a.short, fmt: v => Math.round(v) + '°', fmtAxis: v => Math.round(v) + '°', minSpan: 6, every: 24, label: 'Temperature by model' }))}
+          ${sec('Daily high and rain by model', `<table class="tbl models"><thead><tr><th>Day</th>${r.series.map(sr => `<th style="color:${sr.color}">${sr.short}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table><p class="note small">Highlighted days are where the models differ by more than 3°.</p>`)}`
+      };
+    });
+    return { calc, tile, models };
+  })();
+
+  /* ---------- 26. SOLAR POWER ESTIMATE ---------- */
+  const Solar = (() => {
+    const PR = 0.78;   // real systems lose about a fifth to heat, wiring and dust
+    let kw = 3; try { const v = +localStorage.getItem('aeris:kw'); if (v > 0) kw = v; } catch (e) {}
+    function calc() {
+      const E = X.extra; if (!E || !E.hourly || !E.hourly.shortwave_radiation || !state.data) return null;
+      const H = E.hourly, D = state.data, day0 = D.current.time.slice(0, 10), s0 = H.time.indexOf(day0 + 'T00:00');
+      if (s0 < 0) return null;
+      const kwh = i => ((H.shortwave_radiation[i] || 0) / 1000) * kw * PR;
+      const today = range(s0, 24).reduce((a, i) => a + kwh(i), 0), tomorrow = range(s0 + 24, 24).reduce((a, i) => a + (i < H.time.length ? kwh(i) : 0), 0);
+      const nowI = H.time.indexOf(nowHourStr()), left = nowI >= 0 ? range(nowI, s0 + 24 - nowI).reduce((a, i) => a + kwh(i), 0) : 0;
+      const hrs = range(s0, 24).map(kwh), peak = hrs.indexOf(Math.max(...hrs));
+      const daily = E.daily && E.daily.shortwave_radiation_sum ? E.daily.shortwave_radiation_sum.map(v => (v || 0) / 3.6 * kw * PR) : [];
+      return { today, tomorrow, left, peak, hrs, idx: range(s0, 48).filter(i => i < H.time.length), H, daily, dDays: E.daily ? E.daily.time : [] };
+    }
+    function tile() {
+      const el = $('#solarTile');
+      if (loading('extra')) { el.innerHTML = '<p class="note">Estimating sunshine…</p>'; return; }
+      const r = calc();
+      if (!r) { el.innerHTML = '<p class="note">Sunlight data isn\'t available for this place right now.</p>'; return; }
+      const mx = Math.max(.01, ...r.hrs);
+      el.innerHTML = `<div class="score-row"><p class="big">${r.today.toFixed(1)}<small>kWh today</small></p></div>
+        <p class="note" style="margin-top:2px">From a ${kw} kW rooftop system. Peak around ${fmtHour(r.peak)}. Tomorrow: about ${r.tomorrow.toFixed(1)} kWh.</p>
+        <div class="minibars">${r.hrs.map((v, i) => `<i style="height:${Math.max(3, v / mx * 100)}%;${i === r.peak ? 'background:#FFD60A;box-shadow:0 0 12px #FFD60A' : ''}"></i>`).join('')}</div>
+        <div class="axis"><span>12 AM</span><span>12 PM</span><span>11 PM</span></div>`;
+    }
+    function set(v) { kw = v; try { localStorage.setItem('aeris:kw', v); } catch (e) {} tile(); Sheets.refresh(); }
+    Sheets.def('solar', () => {
+      const r = calc();
+      if (!r) return { title: 'Solar power', html: `<p class="note">${loading('extra') ? 'Still loading…' : 'Sunlight data isn\'t available for this place right now.'}</p>` };
+      const H = r.H;
+      return {
+        title: 'Solar power',
+        html: `<div class="acts in-sheet" role="group" aria-label="System size">${[1, 2, 3, 5, 10].map(v => `<button class="chip${v === kw ? ' on' : ''}" data-kw="${v}" aria-pressed="${v === kw}">${v} kW</button>`).join('')}</div>
+          <div class="hero-num"><p class="big xl">${r.today.toFixed(1)}<small>kWh today</small></p></div>
+          ${kv([['Still to come today', r.left.toFixed(1) + ' kWh'], ['Tomorrow', r.tomorrow.toFixed(1) + ' kWh'], ['Next 7 days', r.daily.reduce((a, b) => a + b, 0).toFixed(0) + ' kWh'], ['Runs a 1.5 kW AC for', 'about ' + Math.round(r.today / 1.5) + ' hours'], ['Or a ceiling fan (75 W) for', 'about ' + Math.round(r.today / .075) + ' hours']])}
+          ${sec('Today and tomorrow, hour by hour', Charts.hour(r.idx.map(i => ((H.shortwave_radiation[i] || 0) / 1000) * kw * PR), pick(H.time, r.idx), { bars: true, min: 0, minSpan: .5, color: () => '#FFD60A', fmt: v => v.toFixed(2) + ' kWh', fmtAxis: v => v.toFixed(1), every: 6, h: 160, label: 'Solar output by hour' }))}
+          ${r.daily.length ? sec('Next 7 days', Charts.days(r.daily, r.dDays.map((t, i) => (i === 0 ? 'Today' : DAYS[dateOf(t).getDay()])), { color: () => '#FFD60A', fmt: v => v.toFixed(0), label: 'Daily solar output' })) : ''}
+          <p class="note small">A rough estimate from forecast sunlight on flat ground, for a typical rooftop system losing about 22% to heat, wiring and dust. Real output depends on panel angle, direction, shade and cleaning.</p>`,
+        after(root) { root.querySelectorAll('[data-kw]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); set(+b.dataset.kw); })); }
+      };
+    });
+    return { calc, tile };
+  })();
+
+  /* ---------- 27. FLOOD WATCH (GloFAS river forecast) ---------- */
+  const Flood = (() => {
+    function calc() {
+      const F = X.flood && X.flood.daily; if (!F || !F.river_discharge || !state.data) return null;
+      const ti = F.time.indexOf(state.data.current.time.slice(0, 10)); if (ti < 1) return null;
+      const past = F.river_discharge.slice(0, ti).filter(v => v != null), fut = F.river_discharge.slice(ti);
+      if (past.length < 20 || !fut.some(v => v != null)) return null;
+      const med = pct(past, .5), p75 = pct(past, .75), pmax = Math.max(...past);
+      let peak = -1, pi = 0; fut.forEach((v, i) => { if (v != null && v > peak) { peak = v; pi = i; } });
+      const ratio = med > 0 ? peak / med : 0;
+      const level = med < 1 && peak < 5 ? 'none' : ratio >= 3 && peak >= pmax ? 'high' : ratio >= 1.8 && peak >= p75 ? 'elevated' : 'normal';
+      const peakDay = F.time[ti + pi], pd = dateOf(peakDay);
+      return { F, ti, med, peak, ratio, level, peakDay, peakLabel: `${DAYS[pd.getDay()]} ${pd.getDate()} ${MONTHS[pd.getMonth()]}` };
+    }
+    const LV = { none: ['No major river nearby', '#8E8E93'], normal: ['Normal', '#30D158'], elevated: ['Running high', '#FF9F0A'], high: ['Flood risk', '#FF453A'] };
+    const fmtQ = v => (v >= 100 ? Math.round(v).toLocaleString('en-IN') : v.toFixed(1));
+    function spark(r) {
+      const F = r.F, a = Math.max(0, r.ti - 30), vals = F.river_discharge.slice(a, r.ti + 30), mx = Math.max(...vals.filter(v => v != null), 1), n = vals.length;
+      const pts = vals.map((v, i) => (v == null ? null : [+(i / (n - 1) * 300).toFixed(1), +(54 - v / mx * 46).toFixed(1)])).filter(Boolean);
+      const tx = ((r.ti - a) / (n - 1) * 300).toFixed(1);
+      return `<svg class="spark" viewBox="0 0 300 60" preserveAspectRatio="none" aria-hidden="true"><path d="${smooth(pts)}" fill="none" stroke="${LV[r.level][1]}" stroke-width="2.5"/><line x1="${tx}" x2="${tx}" y1="0" y2="60" stroke="#fff" stroke-dasharray="2 4" opacity=".6"/></svg><div class="axis"><span>30 days ago</span><span>Today</span><span>In 30 days</span></div>`;
+    }
+    function tile() {
+      const el = $('#floodTile');
+      if (loading('flood')) { el.innerHTML = '<p class="note">Checking nearby rivers…</p>'; return; }
+      const r = calc();
+      if (!r) { el.innerHTML = `${pill('No river data', '#8E8E93')}<p class="note">There's no river forecast for this spot.</p>`; return; }
+      if (r.level === 'none') { el.innerHTML = `${pill(LV.none[0], LV.none[1])}<p class="note">The nearest river grid cell carries very little water, so there's nothing to watch here.</p>`; return; }
+      el.innerHTML = `${pill(LV[r.level][0], LV[r.level][1])}<p class="note">Nearest river: peak about ${fmtQ(r.peak)} m³/s around ${r.peakLabel}, ${r.ratio.toFixed(1)}× its usual flow over the last 3 months.</p>${spark(r)}`;
+    }
+    Sheets.def('flood', () => {
+      const r = calc();
+      if (!r || r.level === 'none') return { title: 'Flood watch', html: `<p class="note">${loading('flood') ? 'Still loading…' : 'There\'s no significant river near this place in the global flood model, so there\'s nothing to watch.'}</p>` };
+      const F = r.F, a = Math.max(0, r.ti - 60), idx = range(a, F.time.length - a);
+      return {
+        title: 'Flood watch',
+        html: `<div class="hero-num">${pill(LV[r.level][0], LV[r.level][1])}</div>
+          <p class="lab" style="margin:10px 0 0">Peak of about ${fmtQ(r.peak)} m³/s around ${r.peakLabel}</p>
+          <p class="note">That's ${r.ratio.toFixed(1)}× the typical flow of the last 3 months (${fmtQ(r.med)} m³/s). A cubic metre per second is about a thousand litres of water passing every second.</p>
+          ${sec('River flow <em>shaded: range of the flood model\'s runs</em>', Charts.hour(idx.map(i => F.river_discharge[i]), idx.map(i => F.time[i] + 'T00:00'), { daily: true, min: 0, band: F.river_discharge_max ? { lo: idx.map(i => (i >= r.ti && F.river_discharge_min ? F.river_discharge_min[i] : null)), hi: idx.map(i => (i >= r.ti ? F.river_discharge_max[i] : null)) } : null, marker: r.ti - a, color: () => '#64D2FF', fmt: v => fmtQ(v) + ' m³/s', fmtAxis: v => fmtQ(v), label: 'River discharge' }))}
+          <p class="note small">From the GloFAS global flood model for the river grid cell nearest to you (about 5 km). It shows how much water the river carries, not how high it will rise in your street, and it is not an official warning. During the monsoon, follow IMD, the Central Water Commission and your state disaster management authority.</p>`
+      };
+    });
+    return { calc, tile };
+  })();
+
+  /* ---------- 28. BEACH MODE (marine forecast; only shown near the sea) ---------- */
+  const Beach = (() => {
+    function calc() {
+      const M = X.marine && X.marine.hourly; if (!M || !M.wave_height || !state.data) return null;
+      if (M.wave_height.filter(v => v != null).length < 24) return null;
+      const D = state.data, h = D.hourly, s = M.time.indexOf(nowHourStr()); if (s < 0) return null;
+      const idx = range(s, 48).filter(i => i < M.time.length);
+      const score = idx.map(i => {
+        const w = M.wave_height[i], wi = h.time.indexOf(M.time[i]); if (w == null || wi < 0 || h.is_day[wi] !== 1) return 0;
+        let sc = w <= .5 ? 100 : w <= 1 ? 82 : w <= 1.5 ? 55 : w <= 2.5 ? 25 : 0;
+        sc -= (h.precipitation_probability[wi] || 0) * .6 + Math.max(0, (h.uv_index[wi] || 0) - 8) * 6 + Math.max(0, Math.abs(h.apparent_temperature[wi] - 28) - 6) * 3 + Math.max(0, h.wind_speed_10m[wi] - 30) * 1.5;
+        return clamp(Math.round(sc), 0, 100);
+      });
+      const times = idx.map(i => M.time[i]), best = windows(score, times, k => score[k] >= 60, 2, 3);
+      return { M, s, idx, score, times, best, wave: M.wave_height[s], period: M.wave_period ? M.wave_period[s] : null, sst: M.sea_surface_temperature ? M.sea_surface_temperature[s] : null };
+    }
+    const waveWord = w => (w == null ? '' : w <= .5 ? 'calm' : w <= 1 ? 'gentle' : w <= 1.5 ? 'moderate' : w <= 2.5 ? 'rough' : 'very rough');
+    function tile() {
+      const el = $('#beachTile'), r = calc();
+      el.hidden = !r;
+      if (!r) return;
+      const b = r.best[0];
+      $('#beachBody').innerHTML = `<p class="lab" style="margin:0">${b ? span(b.t, b.len) : 'No good beach window soon'}</p>
+        <p class="note">Waves ${r.wave.toFixed(1)} m (${waveWord(r.wave)})${r.sst != null ? `, sea ${fmtT(r.sst)}°` : ''}${r.period ? `, every ${Math.round(r.period)} s` : ''}.</p>`;
+    }
+    Sheets.def('beach', () => {
+      const r = calc(); if (!r) return { title: 'Beach', html: '<p class="note">Marine data isn\'t available here.</p>' };
+      return {
+        title: 'Beach',
+        html: `${kv([['Waves now', r.wave.toFixed(1) + ' m, ' + waveWord(r.wave)], r.sst != null ? ['Sea temperature', fmtT(r.sst) + '°'] : null, r.period ? ['Wave period', Math.round(r.period) + ' seconds'] : null])}
+          ${sec('Best beach times', r.best.length ? `<ol class="wins">${r.best.map(b => `<li><b>${span(b.t, b.len)}</b><span>score ${Math.round(b.avg)}</span></li>`).join('')}</ol>` : '<p class="note" style="margin:0">No good window in the next 48 hours.</p>')}
+          ${sec('Wave height, next 48 hours', Charts.hour(r.idx.map(i => r.M.wave_height[i]), r.times, { min: 0, minSpan: 1.5, color: v => (v <= 1 ? '#64D2FF' : v <= 2 ? '#FFD60A' : '#FF453A'), fmt: v => v.toFixed(1) + ' m', fmtAxis: v => v.toFixed(1) + ' m', label: 'Wave height' }))}
+          <p class="note small">Beach scores favour daylight, small waves, little rain and moderate heat and UV. Waves are forecast offshore; rip currents can happen even on calm days. Always swim where lifeguards are on duty and follow their flags.</p>`
+      };
+    });
+    return { calc, tile };
+  })();
+
+  /* ---------- 29. PLANT CARE ---------- */
+  const Plant = (() => {
+    function calc() {
+      const D = state.data, h = D.hourly, E = X.extra;
+      const r24 = nextIdx(24).reduce((a, i) => a + (h.precipitation[i] || 0), 0);
+      let soil = null, et0 = null;
+      if (E && E.hourly && E.hourly.soil_moisture_3_to_9cm) { const i = E.hourly.time.indexOf(nowHourStr()); if (i >= 0) soil = E.hourly.soil_moisture_3_to_9cm[i]; }
+      if (E && E.daily && E.daily.et0_fao_evapotranspiration) et0 = E.daily.et0_fao_evapotranspiration[0];
+      let verdict, why, level;
+      if (r24 >= 5) { verdict = 'No need to water'; why = `About ${Math.round(r24)} mm of rain is coming in the next 24 hours.`; level = '#30D158'; }
+      else if (soil != null && soil >= .3) { verdict = 'Skip watering today'; why = `The soil is still moist (${Math.round(soil * 100)}% water by volume).`; level = '#30D158'; }
+      else if ((soil != null && soil < .15) || (et0 != null && et0 >= 5)) { verdict = 'Water today'; why = `${soil != null ? `The soil is dry (${Math.round(soil * 100)}% water)` : 'It\'s a drying day'}${et0 != null ? ` and plants will lose about ${et0.toFixed(1)} mm of water to the air` : ''}.`; level = '#FF9F0A'; }
+      else { verdict = 'A light watering'; why = `The soil is${soil != null ? ` ${Math.round(soil * 100)}% water,` : ''} neither wet nor dry.`; level = '#FFD60A'; }
+      const idx = nextIdx(48), tmin = Math.min(...pick(h.temperature_2m, idx)), tmax = Math.max(...pick(h.temperature_2m, idx)), gust = Math.max(...pick(h.wind_gusts_10m, idx));
+      const tips = [];
+      if (tmin <= 2) tips.push(['Frost tonight', 'Cover tender plants or bring pots indoors.']);
+      if (tmax >= 40) tips.push(['Extreme heat', 'Move pots into afternoon shade and water at dawn.']);
+      else if (tmax >= 35) tips.push(['Hot afternoons', 'Water early in the morning so roots can drink before the heat.']);
+      if (gust >= 50) tips.push(['Strong gusts', 'Stake tall plants and move light pots to shelter.']);
+      if (verdict === 'Water today' || verdict === 'A light watering') tips.push(['Best time to water', 'Before 9 AM or after 5 PM, when less water evaporates.']);
+      tips.push(['Pots dry out faster', 'Container plants usually need water sooner than garden beds. Push a finger 2 cm into the soil: if it\'s dry, water.']);
+      return { verdict, why, level, soil, et0, r24, tips };
+    }
+    function tile() {
+      const r = calc();
+      $('#plantTile').innerHTML = `${pill(r.verdict, r.level)}<p class="note">${r.why}</p>${r.tips[0] && r.tips[0][0] !== 'Pots dry out faster' ? `<p class="note small">${r.tips[0][0]}: ${r.tips[0][1]}</p>` : ''}`;
+    }
+    Sheets.def('plant', () => {
+      const r = calc(), E = X.extra, D = state.data;
+      let balance = '';
+      if (E && E.daily && E.daily.et0_fao_evapotranspiration) {
+        const rows = E.daily.time.map((t, i) => { const rain = (E.daily.precipitation_sum ? E.daily.precipitation_sum[i] : D.daily.precipitation_sum ? D.daily.precipitation_sum[i] : 0) || 0, out = E.daily.et0_fao_evapotranspiration[i] || 0, net = rain - out; return `<tr><td>${i === 0 ? 'Today' : DAYS[dateOf(t).getDay()]}</td><td>${rain.toFixed(1)} mm</td><td>${out.toFixed(1)} mm</td><td style="color:${net >= 0 ? '#30D158' : '#FF9F0A'}">${net >= 0 ? '+' : ''}${net.toFixed(1)} mm</td></tr>`; }).join('');
+        balance = sec('Water balance this week <em>rain in, minus water lost to the air</em>', `<table class="tbl"><thead><tr><th>Day</th><th>Rain</th><th>Lost</th><th>Balance</th></tr></thead><tbody>${rows}</tbody></table>`);
+      }
+      return {
+        title: 'Plant care',
+        html: `<div class="hero-num">${pill(r.verdict, r.level)}</div><p class="lab" style="margin:10px 0 0;font-size:17px;font-weight:500">${r.why}</p>
+          ${kv([r.soil != null ? ['Soil moisture (3–9 cm)', Math.round(r.soil * 100) + '% water'] : null, r.et0 != null ? ['Water lost to the air today', r.et0.toFixed(1) + ' mm'] : null, ['Rain in the next 24 hours', r.r24.toFixed(1) + ' mm']])}
+          ${sec('Tips for the next two days', `<ul class="plan-list">${r.tips.map(([a, b]) => `<li><b>${a}</b><span>${b}</span></li>`).join('')}</ul>`)}
+          ${balance}
+          <p class="note small">Soil moisture and evaporation come from the forecast model for open ground near you. Every garden is different, so use this as a guide alongside the finger test.</p>`
+      };
+    });
+    return { tile };
+  })();
+
+  /* ---------- 30. SKY COLLECTION ---------- */
+  const Collection = (() => {
+    const B = [
+      ['golden', 'Golden hour', 'Open Aeris during golden hour', '#FF9F0A', 'sunset'], ['epic', 'Spectacular sunset', 'Be here within an hour of a sunset scoring 80 or more', '#FF375F', 'sunset'],
+      ['fullmoon', 'Full moon', 'See a full moon on a clear night', '#E5E5EA', 'moon'], ['newmoon', 'Dark sky', 'Catch a new-moon night', '#5E5CE6', 'moon'],
+      ['starry', 'Starry night', 'A clear night with excellent stargazing', '#BF5AF2', 'star'], ['rain', 'Rain on the glass', 'Wipe the glass while it rains', '#64D2FF', 'drop'],
+      ['storm', 'Thunderstruck', 'See a thunderstorm', '#FFD60A', 'bolt'], ['snow', 'Snow day', 'See snow falling', '#E8F3FF', 'snow'],
+      ['fog', 'Into the mist', 'Open Aeris in fog', '#AEB8C2', 'fog'], ['heat', 'Heatwave', 'Feels like 40° or hotter', '#FF453A', 'flame'],
+      ['cold', 'Cold snap', 'Feels like 2° or colder', '#9AD0FF', 'flake'], ['clean', 'Clean air', 'Air quality of 25 or better', '#30D158', 'leaf'],
+      ['early', 'Early bird', 'Open Aeris within 30 minutes of sunrise', '#FFD60A', 'sunrise'], ['owl', 'Night owl', 'Open Aeris between 1 and 4 AM', '#7D7AFF', 'owl'],
+      ['globe', 'Globetrotter', 'Compare 3 different cities', '#0A84FF', 'globe'], ['window', 'Window gazer', 'Leave window mode on for 10 minutes', '#64D2FF', 'frame'],
+      ['postcard', 'Postcard sender', 'Make a sky postcard', '#FF9F0A', 'card'], ['scholar', 'Sky scholar', 'Learn 3 things with Explain the sky', '#30D158', 'spark']
+    ];
+    const KEY = 'aeris:collection';
+    const got = () => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } };
+    let wipeDist = 0;
+    function unlock(id) {
+      const g = got(); if (g[id]) return;
+      const b = B.find(x => x[0] === id); if (!b) return;
+      g[id] = { at: new Date().toISOString(), city: state.place ? state.place.name : '' };
+      try { localStorage.setItem(KEY, JSON.stringify(g)); } catch (e) {}
+      toast(`Added to your sky collection: ${b[1]}`);
+      tile(); Sheets.refresh();
+    }
+    // checks the real "now" (not a time you've scrubbed to)
+    function check(s) {
+      if (!state.data || state.offset !== 0) return;
+      const D = state.data, h = D.hourly, i = state.nowIdx, k = kindOf(h.weather_code[i]), night = h.is_day[i] !== 1;
+      const now = toMins(D.current.time), rise = toMins(D.daily.sunrise[s.dIdx]), set = toMins(D.daily.sunset[s.dIdx]);
+      if (['clear', 'partly', 'cloud'].includes(k) && (Math.abs(now - rise) <= 45 || Math.abs(now - set) <= 45)) unlock('golden');
+      const ev = Sunset.events().find(e => e.type === 'sunset' && e.day === D.current.time.slice(0, 10));
+      if (ev && ev.score >= 80 && Math.abs(now - ev.mins) <= 60) unlock('epic');
+      const il = Astro.illum(Astro.phase(timeMs(D, D.current.time))), cloud = h.cloud_cover ? h.cloud_cover[i] : 50;
+      if (night && il >= .97 && cloud < 40) unlock('fullmoon');
+      if (night && il <= .03) unlock('newmoon');
+      if (night && cloud < 15 && il < .5) unlock('starry');
+      if (k === 'storm') unlock('storm');
+      if (k === 'snow') unlock('snow');
+      if (k === 'fog') unlock('fog');
+      if (h.apparent_temperature[i] >= 40) unlock('heat');
+      if (h.apparent_temperature[i] <= 2) unlock('cold');
+      if (state.aqi && state.aqi.us_aqi != null && state.aqi.us_aqi <= 25) unlock('clean');
+      if (now - rise >= -10 && now - rise <= 30) unlock('early');
+      if (now >= 60 && now < 240) unlock('owl');
+    }
+    function wiped(dx) { if (tgt.rain > 0 && !got().rain) { wipeDist += dx; if (wipeDist > 1500) unlock('rain'); } }
+    function city(name) {
+      let c = []; try { c = JSON.parse(localStorage.getItem('aeris:cities')) || []; } catch (e) {}
+      if (!c.includes(name)) { c.push(name); try { localStorage.setItem('aeris:cities', JSON.stringify(c.slice(-20))); } catch (e) {} }
+      if (c.length >= 3) unlock('globe');
+    }
+    const medal = (b, on, size = 54) => `<span class="medal${on ? '' : ' locked'}" style="--mc:${b[3]};width:${size}px;height:${size}px">${glyph(b[4], Math.round(size * .44))}</span>`;
+    function tile() {
+      const g = got(), n = Object.keys(g).length, recent = B.filter(b => g[b[0]]).sort((a, c) => (g[c[0]].at > g[a[0]].at ? 1 : -1)).slice(0, 4);
+      $('#collTile').innerHTML = `<p class="big">${n}<small>of ${B.length} collected</small></p>
+        <div class="glowbar" style="--s:${n / B.length * 100}%"><i></i></div>
+        <div class="medal-row">${recent.length ? recent.map(b => medal(b, true, 44)).join('') : B.slice(0, 4).map(b => medal(b, false, 44)).join('')}</div>
+        <p class="note small">${n ? `Latest: ${B.find(b => b[0] === recent[0][0])[1]}.` : 'Collect sky moments as they happen: golden hours, full moons, storms and more.'}</p>`;
+    }
+    Sheets.def('collection', () => {
+      const g = got();
+      return {
+        title: 'Sky collection',
+        html: `<p class="note">Moments you've caught in Aeris. They unlock on their own when the real sky delivers, so keep an eye out. Your collection is saved in this browser.</p>
+          <div class="medals">${B.map(b => `<div class="md${g[b[0]] ? '' : ' off'}">${medal(b, !!g[b[0]])}<b>${b[1]}</b><small>${g[b[0]] ? `${new Date(g[b[0]].at).toLocaleDateString([], { day: 'numeric', month: 'short', year: 'numeric' })}${g[b[0]].city ? ', ' + escH(g[b[0]].city) : ''}` : b[2]}</small></div>`).join('')}</div>`
+      };
+    });
+    return { unlock, check, wiped, city, tile, B };
+  })();
+
+  /* ---------- 31. SKY POSTCARDS ---------- */
+  const Postcard = (() => {
+    const SIZES = { story: [1080, 1920, 'Story'], square: [1080, 1080, 'Square'], wide: [1600, 900, 'Wide'] };
+    let fmt = 'story', glc = null, sky = null, url = null;
+    const F = (w, px) => `${w} ${Math.round(px)}px -apple-system, "SF Pro Display", Inter, "Helvetica Neue", Arial, sans-serif`;
+    function line() {
+      const ev = Sunset.next()[0];
+      if (ev && ev.type === 'sunset' && ev.score >= 50 && ev.t.slice(0, 10) === state.data.current.time.slice(0, 10)) return `Tonight's sunset score: ${ev.score} (${Sunset.label(ev.score).toLowerCase()})`;
+      const s = $('#summary').textContent.split('. ')[0];
+      return s.length > 70 ? s.slice(0, 68) + '…' : s;
+    }
+    function render(f, scale = 1) {
+      const [W0, H0] = SIZES[f], w = Math.round(W0 * scale), h = Math.round(H0 * scale);
+      const c = document.createElement('canvas'); c.width = w; c.height = h;
+      const x = c.getContext('2d');
+      if (glOK && !sky) { glc = document.createElement('canvas'); sky = makeSky(glc); }
+      if (sky) {
+        sky.resize(w, h);
+        sky.draw(Object.assign({}, cur, { mist: cur.mist * .3, frost: cur.frost * .6 }), (performance.now() - startT) / 1000, {});
+        x.drawImage(glc, 0, 0, w, h);
+      } else {
+        const cs = getComputedStyle(document.documentElement), g = x.createLinearGradient(0, 0, 0, h);
+        g.addColorStop(0, cs.getPropertyValue('--sky-a') || '#1C5FC4'); g.addColorStop(.55, cs.getPropertyValue('--sky-b') || '#3D8BE8'); g.addColorStop(1, cs.getPropertyValue('--sky-c') || '#7DB9F3');
+        x.fillStyle = g; x.fillRect(0, 0, w, h);
+      }
+      const shade = x.createLinearGradient(0, h * .45, 0, h); shade.addColorStop(0, 'rgba(0,8,28,0)'); shade.addColorStop(1, 'rgba(0,8,28,.42)');
+      x.fillStyle = shade; x.fillRect(0, 0, w, h);
+      const u = (f === 'wide' ? h / 900 : w / 1080);
+      const D = state.data, s = selected(), p = parts(state.data.current.time), dt = dateOf(D.current.time);
+      x.fillStyle = '#fff'; x.textBaseline = 'alphabetic'; x.shadowColor = 'rgba(0,16,50,.35)'; x.shadowBlur = 30 * u;
+      // brand
+      const og = x.createRadialGradient(80 * u, 86 * u, 2, 86 * u, 92 * u, 24 * u); og.addColorStop(0, '#FFF6C8'); og.addColorStop(.6, '#FFD60A'); og.addColorStop(1, '#64D2FF');
+      x.fillStyle = og; x.beginPath(); x.arc(86 * u, 92 * u, 22 * u, 0, 7); x.fill();
+      x.fillStyle = '#fff'; x.font = F(600, 40 * u); x.textAlign = 'left'; x.fillText('Aeris', 124 * u, 106 * u);
+      x.font = F(500, 32 * u); x.textAlign = 'right'; x.globalAlpha = .85;
+      x.fillText(`${DAYS[dt.getDay()]} ${dt.getDate()} ${MONTHS[dt.getMonth()]}, ${fmtMins(p.h * 60 + p.mi)}`, w - 70 * u, 104 * u); x.globalAlpha = 1;
+      const temp = fmtT(state.offset === 0 ? D.current.temperature_2m : s.t) + '°', cond = LABELS[s.code] || '', hl = `H ${fmtT(D.daily.temperature_2m_max[s.dIdx])}°   L ${fmtT(D.daily.temperature_2m_min[s.dIdx])}°`;
+      const region = [state.place.admin, state.place.country].filter((v, i, a) => v && v !== state.place.name && a.indexOf(v) === i).join(', ');
+      if (f === 'wide') {
+        x.textAlign = 'left'; const L = 90 * u;
+        x.font = F(500, 64 * u); x.fillText(state.place.name, L, 300 * u);
+        x.font = F(400, 30 * u); x.globalAlpha = .8; x.fillText(region, L, 345 * u); x.globalAlpha = 1;
+        x.font = F(200, 300 * u); x.fillText(temp, L - 12 * u, 620 * u);
+        x.font = F(500, 50 * u); x.fillText(cond, L, 700 * u);
+        x.font = F(500, 36 * u); x.globalAlpha = .85; x.fillText(hl, L, 752 * u); x.globalAlpha = 1;
+      } else {
+        const sq = f === 'square', cx = w / 2;
+        x.textAlign = 'center';
+        x.font = F(500, (sq ? 64 : 80) * u); x.fillText(state.place.name, cx, (sq ? 250 : 560) * u);
+        x.font = F(400, (sq ? 30 : 36) * u); x.globalAlpha = .8; x.fillText(region, cx, (sq ? 296 : 612) * u); x.globalAlpha = 1;
+        x.font = F(200, (sq ? 280 : 380) * u); x.fillText(temp, cx + (sq ? 30 : 40) * u, (sq ? 560 : 960) * u);
+        x.font = F(500, (sq ? 50 : 62) * u); x.fillText(cond, cx, (sq ? 640 : 1060) * u);
+        x.font = F(500, (sq ? 36 : 44) * u); x.globalAlpha = .85; x.fillText(hl, cx, (sq ? 696 : 1126) * u); x.globalAlpha = 1;
+      }
+      // bottom card
+      x.shadowBlur = 0;
+      const cardW = f === 'wide' ? 640 * u : w - 140 * u, cardH = 118 * u, cardX = f === 'wide' ? w - cardW - 90 * u : 70 * u, cardY = h - cardH - (f === 'story' ? 210 : 120) * u;
+      x.fillStyle = 'rgba(0,10,30,.28)'; x.strokeStyle = 'rgba(255,255,255,.28)'; x.lineWidth = 2 * u;
+      x.beginPath(); x.roundRect ? x.roundRect(cardX, cardY, cardW, cardH, 30 * u) : x.rect(cardX, cardY, cardW, cardH); x.fill(); x.stroke();
+      x.fillStyle = '#fff'; x.textAlign = 'left'; x.font = F(500, 34 * u);
+      let ln = line(); while (x.measureText(ln).width > cardW - 70 * u && ln.length > 10) ln = ln.slice(0, -2);
+      x.fillText(ln, cardX + 34 * u, cardY + 54 * u);
+      x.font = F(400, 26 * u); x.globalAlpha = .8;
+      x.fillText(`Feels like ${fmtT(s.feels)}°${state.aqi && state.aqi.us_aqi != null ? `, air quality ${Math.round(state.aqi.us_aqi)}` : ''}, UV ${Math.round(s.uv)}`, cardX + 34 * u, cardY + 92 * u);
+      x.globalAlpha = .7; x.textAlign = 'center'; x.font = F(500, 26 * u);
+      x.fillText('harshxt01.github.io/aeris', w / 2, h - (f === 'story' ? 110 : 50) * u);
+      x.globalAlpha = 1;
+      return c;
+    }
+    function thumb() {
+      const img = $('#pcThumb'); if (!img || !state.data) return;
+      try { img.src = render('square', .32).toDataURL('image/jpeg', .85); } catch (e) { /* ignore */ }
+    }
+    const fileName = () => `aeris-${(state.place.name || 'sky').toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${fmt}.png`;
+    Sheets.def('postcard', () => ({
+      title: 'Sky postcard',
+      html: `<div class="acts in-sheet" role="group" aria-label="Postcard shape">${Object.entries(SIZES).map(([k, v]) => `<button class="chip${k === fmt ? ' on' : ''}" data-pc="${k}" aria-pressed="${k === fmt}">${v[2]}</button>`).join('')}</div>
+        <div class="pc-stage pc-${fmt}"><img id="pcImg" alt="Postcard preview of the current sky"></div>
+        <div class="links"><a class="cta" id="pcSave" download>Save image</a>${navigator.canShare ? '<button class="link-btn" id="pcShare">Share</button>' : ''}</div>
+        <p class="note small">The postcard captures the live sky as it is right now, with your city and the weather. Story fits Instagram and WhatsApp status, Square fits a feed, and Wide fits X and LinkedIn.</p>`,
+      after(root) {
+        root.querySelectorAll('[data-pc]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); fmt = b.dataset.pc; Sheets.refresh(); }));
+        const c = render(fmt, 1);
+        c.toBlob(blob => {
+          if (!blob) return;
+          if (url) URL.revokeObjectURL(url);
+          url = URL.createObjectURL(blob);
+          $('#pcImg', root).src = url;
+          const a = $('#pcSave', root); a.href = url; a.download = fileName();
+          a.addEventListener('click', () => Collection.unlock('postcard'));
+          const sh = $('#pcShare', root);
+          if (sh) sh.addEventListener('click', () => {
+            const file = new File([blob], fileName(), { type: 'image/png' });
+            if (navigator.canShare({ files: [file] })) navigator.share({ files: [file], title: 'Aeris', text: `The sky over ${state.place.name} right now` }).then(() => Collection.unlock('postcard')).catch(() => {});
+            else toast('This browser can\'t share images. Save the image instead.');
+          });
+        }, 'image/png');
+      }
+    }));
+    return { thumb };
+  })();
+
+  /* ---------- 32. EXPLAIN THE SKY ---------- */
+  const Explain = (() => {
+    const el = $('#explain'); let on = false;
+    const seen = new Set();
+    function spots() {
+      const D = state.data, s = selected(), W = innerWidth, H = innerHeight, k = s.kind, pl = state.place;
+      const ms = timeMs(D, s.clock), sunAlt = Math.round(Astro.sunAlt(ms, pl.lat, pl.lon) / RAD), il = Astro.illum(Astro.phase(ms));
+      const golden = document.documentElement.style.getPropertyValue('--accent').trim().toUpperCase() === '#FFB46B';
+      const h = D.hourly, i = s.i, out = [];
+      const y = v => clamp(v, 110, H - 70), xx = v => clamp(v, 40, W - 40);
+      const skyTitle = s.day ? (golden ? 'Why is the sky orange?' : cur.cloud > .75 ? 'Why is the sky grey?' : 'Why is the sky blue?') : 'Why is the night sky dark?';
+      const skyBody = s.day ? (golden
+        ? `Near sunrise and sunset, sunlight crosses up to 40 times more air to reach you. Most blue light is scattered away on the journey, leaving oranges and reds. High clouds catch that light, which is what Aeris's sunset score measures.`
+        : cur.cloud > .75 ? `Cloud droplets are much bigger than air molecules, so they scatter every colour of light equally. Equal amounts of every colour look white, and thick cloud lets less of it through, so it looks grey.`
+        : `Sunlight contains every colour. Air molecules scatter short blue waves far more than long red ones (Rayleigh scattering), so blue light reaches your eyes from every part of the sky. Right now the sun is ${sunAlt}° above the horizon.`)
+        : `Without the sun lighting the air above you, there's nothing to scatter towards your eyes. The faint glow you may see is city light bouncing off haze and clouds, which is why the countryside has more stars.`;
+      out.push({ id: 'sky', x: W * .12, y: H * .24, title: skyTitle, body: skyBody });
+      if (cur.sunE > -0.02) out.push({ id: 'sun', x: W * cur.sunX, y: H * (.92 - cur.sunE), title: 'The sun', body: `The sun is ${sunAlt}° above the horizon${cur.cloud > .8 ? ', hidden behind the clouds' : ''}. It sets at ${fmtMins(toMins(D.daily.sunset[s.dIdx]))}. Its light takes about 8 minutes and 20 seconds to reach you, and the UV index now is ${Math.round(s.uv)}.` });
+      if (cur.sunE < .05) out.push({ id: 'moon', x: W * cur.moonX, y: H * .13, title: `The moon: ${Astro.name(Astro.phase(ms)).toLowerCase()}`, body: `The moon always shows us the same face. What changes is how much of its sunlit half we can see as it orbits Earth every 29.5 days. Tonight ${Math.round(il * 100)}% is lit. ${il > .9 ? 'A bright moon washes out fainter stars.' : il < .1 ? 'A dark moon makes this a great night for stars.' : ''}` });
+      if (cur.cloud > .15) {
+        const lo = h.cloud_cover_low ? h.cloud_cover_low[i] : null, mid = h.cloud_cover_mid ? h.cloud_cover_mid[i] : null, hi = h.cloud_cover_high ? h.cloud_cover_high[i] : null;
+        out.push({ id: 'clouds', x: W * .3, y: H * .3, title: 'The clouds', body: `Clouds are billions of tiny water droplets or ice crystals. ${lo != null ? `Right now the sky is ${Math.round(hi)}% high cloud (wispy cirrus made of ice, above about 6 km), ${Math.round(mid)}% mid-level cloud (2 to 6 km) and ${Math.round(lo)}% low cloud (below 2 km, where rain clouds form).` : ''}` });
+      }
+      if (cur.rain > .05) out.push({ id: 'rain', x: W * .72, y: H * .58, title: 'Raindrops on the glass', body: `Rain forms when cloud droplets bump together until they're too heavy to float. Each drop on the glass works like a tiny lens and flips the view behind it upside down. Look closely at the drops on your screen: Aeris draws them that way.` });
+      if (cur.snow > .05) out.push({ id: 'snow', x: W * .72, y: H * .58, title: 'Snowflakes', body: `Snowflakes grow when water vapour freezes straight onto ice crystals high in the cloud. Every flake has six arms because of the way water molecules lock together in ice.` });
+      if (cur.storm > .05) out.push({ id: 'storm', x: W * .55, y: H * .2, title: 'Lightning and thunder', body: `Lightning heats the air to about 30,000 °C, five times hotter than the sun's surface. The air expands so fast it bangs: that's thunder. Count the seconds between flash and bang and divide by 3 for the distance in kilometres.` });
+      if (cur.fog > .1) out.push({ id: 'fog', x: W * .2, y: H * .7, title: 'Fog', body: `Fog is a cloud at ground level. It forms when the air cools to its dew point (${fmtT(h.dew_point_2m[i])}° right now) and water vapour condenses into droplets.` });
+      if (cur.mist > .3) out.push({ id: 'mist', x: W * .86, y: H * .78, title: 'Mist on the glass', body: `When moist air touches glass colder than its dew point (${fmtT(h.dew_point_2m[i])}° now), water condenses into droplets too small to see one by one. Together they scatter light and blur the view. Wipe it with your cursor when you're done exploring.` });
+      if (!s.day && cur.cloud < .6) out.push({ id: 'stars', x: W * .82, y: H * .24, title: 'Why stars twinkle', body: `Starlight travels for years, then wobbles through the last few kilometres of moving, uneven air. That bending makes stars flicker. Planets twinkle less because they're tiny discs rather than points.` });
+      if (cur.frost > .05) out.push({ id: 'frost', x: W * .08, y: H * .88, title: 'Frost', body: `Below freezing, water vapour can turn straight into ice on cold surfaces without becoming liquid first, growing feathery crystals from the edges inwards.` });
+      return out.map(o => Object.assign(o, { x: xx(o.x), y: y(o.y) }));
+    }
+    function draw() {
+      const sp = spots();
+      el.innerHTML = `<div class="ex-bar glass"><span>${glyph('spark', 18)}Tap a glowing dot to learn what you're seeing.</span><button class="cta" id="exDone">Done</button></div>` +
+        sp.map((o, n) => `<button class="ex-dot" style="left:${o.x}px;top:${o.y}px;--d:${n * 90}ms" data-ex="${o.id}" aria-label="${escH(o.title)}"><i></i></button>`).join('') +
+        '<div class="ex-card glass" id="exCard" hidden role="dialog" aria-live="polite"></div>';
+      $('#exDone').addEventListener('click', close);
+      el.querySelectorAll('.ex-dot').forEach(b => b.addEventListener('click', e => {
+        e.stopPropagation();
+        const o = sp.find(z => z.id === b.dataset.ex), card = $('#exCard');
+        el.querySelectorAll('.ex-dot').forEach(d => d.classList.toggle('on', d === b));
+        card.innerHTML = `<b>${o.title}</b><p>${o.body}</p>`;
+        card.hidden = false;
+        const cw = Math.min(360, innerWidth - 32), left = clamp(o.x - cw / 2, 16, innerWidth - cw - 16);
+        card.style.width = cw + 'px'; card.style.left = left + 'px';
+        const below = o.y + 28 + 220 < innerHeight;
+        card.style.top = below ? (o.y + 28) + 'px' : ''; card.style.bottom = below ? '' : (innerHeight - o.y + 28) + 'px';
+        seen.add(o.id); if (seen.size >= 3) Collection.unlock('scholar');
+      }));
+    }
+    function open() { if (!state.data || on) return; on = true; stopPlay(); Sheets.close(); el.hidden = false; document.body.classList.add('explaining'); draw(); setTimeout(() => { const d = el.querySelector('.ex-dot'); if (d) d.focus(); }, 100); }
+    function close() { if (!on) return; on = false; el.hidden = true; el.innerHTML = ''; document.body.classList.remove('explaining'); $('#explainBtn').focus(); }
+    function setup() {
+      $('#explainBtn').addEventListener('click', open);
+      addEventListener('keydown', e => { if (on && e.key === 'Escape') close(); });
+      el.addEventListener('click', e => { if (e.target === el) { const c = $('#exCard'); if (c) c.hidden = true; el.querySelectorAll('.ex-dot').forEach(d => d.classList.remove('on')); } });
+      addEventListener('resize', debounce(() => { if (on) draw(); }, 200));
+    }
+    return { setup, open, close, get on() { return on; } };
+  })();
+
+  /* ---------- 33. EMBEDDABLE WIDGET ---------- */
+  const Widget = (() => {
+    const o = { style: 'card', theme: 'sky' };
+    const base = () => (location.protocol.startsWith('http') ? location.href.replace(/[^/]*([?#].*)?$/, '') : 'https://harshxt01.github.io/aeris/');
+    const src = () => { const p = state.place, q = new URLSearchParams({ lat: (+p.lat).toFixed(4), lon: (+p.lon).toFixed(4), name: p.name, style: o.style, theme: o.theme, unit: state.unit }); return base() + 'widget.html?' + q.toString(); };
+    const dims = () => (o.style === 'card' ? [340, 200] : [360, 72]);
+    const code = () => { const [w, h] = dims(); return `<iframe src="${src()}" width="${w}" height="${h}" style="border:0;border-radius:${o.style === 'card' ? 22 : 18}px;overflow:hidden" loading="lazy" title="Weather in ${escH(state.place.name)} by Aeris"></iframe>`; };
+    Sheets.def('widget', () => {
+      const [w, h] = dims(), local = !location.protocol.startsWith('http');
+      return {
+        title: 'Website widget',
+        html: `<p class="note">Show the live weather for ${escH(state.place.name)} on any website, blog or portfolio. Pick a style, copy the code and paste it into your page's HTML.</p>
+          <div class="wg-opts"><div><span class="sub-lab">Style</span><div class="acts in-sheet">${[['card', 'Card'], ['strip', 'Strip']].map(([k, l]) => `<button class="chip${o.style === k ? ' on' : ''}" data-wg="style:${k}">${l}</button>`).join('')}</div></div>
+          <div><span class="sub-lab">Look</span><div class="acts in-sheet">${[['sky', 'Live sky colours'], ['dark', 'Dark'], ['light', 'Light']].map(([k, l]) => `<button class="chip${o.theme === k ? ' on' : ''}" data-wg="theme:${k}">${l}</button>`).join('')}</div></div></div>
+          ${sec('Preview', `<div class="wg-prev"><iframe src="${local ? 'widget.html?' + src().split('?')[1] : src()}" width="${w}" height="${h}" style="border:0;border-radius:${o.style === 'card' ? 22 : 18}px" title="Widget preview"></iframe></div>`)}
+          ${sec('Embed code', `<textarea class="wg-code" readonly rows="4" aria-label="Embed code">${escH(code())}</textarea><div class="links"><button class="cta" id="wgCopy">Copy code</button></div>`)}
+          <p class="note small">The widget updates itself every 30 minutes, uses about 10 KB and links back to the full Aeris forecast for that city. It shows the city in your current search, so search for a different city first to make a widget for it.</p>`,
+        after(root) {
+          root.querySelectorAll('[data-wg]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); const [k, v] = b.dataset.wg.split(':'); o[k] = v; Sheets.refresh(); }));
+          $('#wgCopy', root).addEventListener('click', () => {
+            (navigator.clipboard ? navigator.clipboard.writeText(code()) : Promise.reject()).then(() => toast('Widget code copied')).catch(() => { const t = $('.wg-code', root); t.focus(); t.select(); toast('Press Cmd+C or Ctrl+C to copy'); });
+          });
+        }
+      };
+    });
+  })();
+
+  /* ---------- 34. RENDER ALL INSIGHT TILES ---------- */
+  function renderInsights() {
+    if (!state.data) return;
+    [Rain.chip, Conf.tile, Solar.tile, Flood.tile, Plant.tile, Beach.tile, Alerts.render].forEach(fn => { try { fn(); } catch (e) { console.warn('Aeris:', e); } });
+    const beachOn = !$('#beachTile').hidden;
+    ['floodCard', 'plantCard'].forEach(id => { const t = $('#' + id); t.classList.toggle('s4', beachOn); t.classList.toggle('s6', !beachOn); });
+    if (['confidence', 'models', 'solar', 'flood', 'beach', 'plant', 'raincast', 'alerts'].includes(Sheets.current)) Sheets.refresh();
+  }
+
   function init() {
     glOK = initGL();
     resizeGL();
     addEventListener('resize', debounce(resizeGL, 200));
     requestAnimationFrame(frame);
     setupWipe();
-    Sound.setup(); Compare.setup(); setupPWA(); Sheets.setup(); Planner.setup(); WindowMode.setup();
+    $$('[data-glyph]').forEach(e => { e.outerHTML = glyph(e.dataset.glyph, +(e.dataset.size || 15)); });
+    Sound.setup(); Compare.setup(); setupPWA(); Sheets.setup(); Planner.setup(); WindowMode.setup(); Alerts.setup(); Explain.setup();
     buildGauges();
     setupPointerEffects(); setupScroll(); setupDragScroll();
 
@@ -2985,7 +3882,7 @@ void main() {
 
     // keyboard: ← → move through time, space plays (when not typing)
     addEventListener('keydown', e => {
-      if (document.body.classList.contains('sheet-open') || document.body.classList.contains('cmp-open') || document.body.classList.contains('wm')) return;
+      if (document.body.classList.contains('sheet-open') || document.body.classList.contains('cmp-open') || document.body.classList.contains('wm') || document.body.classList.contains('explaining')) return;
       if (!state.data || /INPUT|TEXTAREA/.test(document.activeElement.tagName) && document.activeElement.type !== 'range') return;
       if (document.activeElement.type === 'range') return;
       if (e.key === 'ArrowRight') { stopPlay(); setOffset(state.offset + 1); e.preventDefault(); }
@@ -2997,7 +3894,9 @@ void main() {
     setTimeout(hideIntro, 4000); // never leave the intro stuck
 
     let place = DEFAULT_PLACE;
+    const qp = new URLSearchParams(location.search), qlat = parseFloat(qp.get('lat')), qlon = parseFloat(qp.get('lon'));
     try { const s = JSON.parse(localStorage.getItem('aeris:place')); if (s && s.lat != null && s.lon != null) place = s; } catch (e) {}
+    if (isFinite(qlat) && isFinite(qlon) && Math.abs(qlat) <= 90 && Math.abs(qlon) <= 180) place = { name: (qp.get('name') || 'Selected place').slice(0, 60), admin: '', country: '', lat: qlat, lon: qlon };
     loadWeather(place);
   }
 
